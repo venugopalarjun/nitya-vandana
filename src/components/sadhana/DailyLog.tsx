@@ -16,6 +16,7 @@ export function DailyLog({ log }: DailyLogProps) {
   };
 
   const items = [
+    { label: "Hare Krishna", value: (log.mahamantraCount || 0) > 0 ? `${log.mahamantraCount} chants` : "—" },
     { label: "Gayatri", value: log.gayatriCount > 0 ? `${log.gayatriCount} chants` : "—" },
     { label: "Hanuman Chalisa", value: log.chalisaChunksRead.length > 0 ? `${log.chalisaChunksRead.length} chunk${log.chalisaChunksRead.length > 1 ? "s" : ""}` : "—" },
     { label: "Meditation", value: formatDuration(log.meditationSeconds) },

@@ -4,6 +4,7 @@ import { useLocalStorage } from "./useLocalStorage";
 
 export interface DailyLog {
   date: string;
+  mahamantraCount: number;
   gayatriCount: number;
   chalisaChunksRead: string[];
   meditationSeconds: number;
@@ -22,6 +23,7 @@ export function usePracticeLog() {
   const today = todayKey();
   const todayLog: DailyLog = logs[today] || {
     date: today,
+    mahamantraCount: 0,
     gayatriCount: 0,
     chalisaChunksRead: [],
     meditationSeconds: 0,
@@ -32,6 +34,10 @@ export function usePracticeLog() {
       ...prev,
       [today]: { ...todayLog, ...partial, date: today },
     }));
+  }
+
+  function addMahamantraCount(count: number) {
+    updateToday({ mahamantraCount: todayLog.mahamantraCount + count });
   }
 
   function addGayatriCount(count: number) {
@@ -60,7 +66,8 @@ export function usePracticeLog() {
       const log = logs[key];
       if (
         log &&
-        (log.gayatriCount > 0 ||
+        ((log.mahamantraCount || 0) > 0 ||
+          log.gayatriCount > 0 ||
           log.chalisaChunksRead.length > 0 ||
           log.meditationSeconds > 0)
       ) {
@@ -76,6 +83,7 @@ export function usePracticeLog() {
   return {
     todayLog,
     streak,
+    addMahamantraCount,
     addGayatriCount,
     markChalisaChunk,
     addMeditationSeconds,

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { usePracticeLog } from "@/hooks/usePracticeLog";
 import { useMeditationTimer } from "@/hooks/useMeditationTimer";
+import { HareKrishnaPanel } from "./HareKrishnaPanel";
 import { GayatriPanel } from "./GayatriPanel";
 import { ChalisaPanel } from "./ChalisaPanel";
 import { MeditationTimerPanel, MeditationTimerCard } from "./MeditationTimer";
@@ -10,13 +11,18 @@ import { RudrakshaCounter, useRudrakshaCounter } from "./RudrakshaCounter";
 import { DailyLog } from "./DailyLog";
 import chalisaData from "@/content/hanuman-chalisa.json";
 
-type Mode = "gayatri" | "chalisa" | "meditation";
+type Mode = "harekrishna" | "gayatri" | "chalisa" | "meditation";
 
 const MODE_META: Record<Mode, { eyebrow: string; title: string; copy: string }> = {
+  harekrishna: {
+    eyebrow: "Mahamantra",
+    title: "Hare Krishna",
+    copy: "The Mahamantra from Kali-Santarana Upanishad. Chant and count.",
+  },
   gayatri: {
-    eyebrow: "Primary Mantra",
+    eyebrow: "Vedic Mantra",
     title: "Gayatri Mantra",
-    copy: "Sanskrit, transliteration, English meaning, source reference, and japa counting in one place.",
+    copy: "Sanskrit, transliteration, English meaning, and japa counting.",
   },
   chalisa: {
     eyebrow: "Daily Chunk",
@@ -31,12 +37,13 @@ const MODE_META: Record<Mode, { eyebrow: string; title: string; copy: string }> 
 };
 
 export function Cockpit() {
-  const [mode, setMode] = useState<Mode>("gayatri");
+  const [mode, setMode] = useState<Mode>("harekrishna");
   const [japaTarget, setJapaTarget] = useState(108);
   const [chunkIndex, setChunkIndex] = useState(0);
   const {
     todayLog,
     streak,
+    addMahamantraCount,
     addGayatriCount,
     markChalisaChunk,
     addMeditationSeconds,
@@ -44,7 +51,9 @@ export function Cockpit() {
   } = usePracticeLog();
 
   const meditation = useMeditationTimer(addMeditationSeconds);
-  const rudraksha = useRudrakshaCounter(japaTarget, addGayatriCount);
+  const mahamantraCounter = useRudrakshaCounter(japaTarget, addMahamantraCount);
+  const gayatriCounter = useRudrakshaCounter(japaTarget, addGayatriCount);
+  const activeCounter = mode === "harekrishna" ? mahamantraCounter : gayatriCounter;
 
   if (!hydrated) {
     return (
@@ -102,13 +111,13 @@ export function Cockpit() {
           <section>
             {/* Mode row */}
             <div className="flex flex-wrap gap-[9px] mb-[10px]">
-              {(["gayatri", "chalisa", "meditation"] as Mode[]).map((m) => (
+              {(["harekrishna", "gayatri", "chalisa", "meditation"] as Mode[]).map((m) => (
                 <button
                   key={m}
                   onClick={() => setMode(m)}
                   className={`mode-btn ${mode === m ? "mode-btn-active" : ""}`}
                 >
-                  {m === "gayatri" ? "Gayatri" : m === "chalisa" ? "Hanuman Chalisa" : "Meditation"}
+                  {m === "harekrishna" ? "Hare Krishna" : m === "gayatri" ? "Gayatri" : m === "chalisa" ? "Hanuman Chalisa" : "Meditation"}
                 </button>
               ))}
             </div>
@@ -124,6 +133,7 @@ export function Cockpit() {
               </div>
 
               <div className="panel-body">
+                {mode === "harekrishna" && <HareKrishnaPanel />}
                 {mode === "gayatri" && <GayatriPanel />}
                 {mode === "chalisa" && (
                   <ChalisaPanel
@@ -140,9 +150,9 @@ export function Cockpit() {
 
               <div className="panel-footer max-[980px]:flex-col max-[980px]:items-start">
                 <div className="flex flex-wrap gap-[9px]">
-                  {mode === "gayatri" && (
+                  {(mode === "harekrishna" || mode === "gayatri") && (
                     <>
-                      <button className="btn btn-primary" onClick={rudraksha.tap}>◉ Count One</button>
+                      <button className="btn btn-primary" onClick={activeCounter.tap}>◉ Count One</button>
                       {[11, 21, 54, 108].map((c) => (
                         <button
                           key={c}
@@ -186,11 +196,11 @@ export function Cockpit() {
           <aside className="grid gap-[10px] content-start">
             <RudrakshaCounter
               target={japaTarget}
-              onTargetChange={(t) => { setJapaTarget(t); rudraksha.clampTo(t); }}
-              count={rudraksha.count}
-              onTap={rudraksha.tap}
-              onUndo={rudraksha.undo}
-              onReset={rudraksha.reset}
+              onTargetChange={(t) => { setJapaTarget(t); activeCounter.clampTo(t); }}
+              count={activeCounter.count}
+              onTap={activeCounter.tap}
+              onUndo={activeCounter.undo}
+              onReset={activeCounter.reset}
             />
 
             <MeditationTimerCard timer={meditation} />
