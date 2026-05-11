@@ -11,6 +11,8 @@ import { RudrakshaCounter, useRudrakshaCounter } from "./RudrakshaCounter";
 import { DailyLog } from "./DailyLog";
 import chalisaData from "@/content/hanuman-chalisa.json";
 
+const TOTAL_CHALISA_VERSES = chalisaData.chunks.reduce((sum, c) => sum + c.verses.length, 0);
+
 type Mode = "harekrishna" | "gayatri" | "chalisa" | "meditation";
 
 const MODE_META: Record<Mode, { eyebrow: string; title: string; copy: string }> = {
@@ -39,7 +41,7 @@ const MODE_META: Record<Mode, { eyebrow: string; title: string; copy: string }> 
 export function Cockpit() {
   const [mode, setMode] = useState<Mode>("harekrishna");
   const [japaTarget, setJapaTarget] = useState(108);
-  const [chunkIndex, setChunkIndex] = useState(0);
+  const [verseIndex, setVerseIndex] = useState(0);
   const {
     todayLog,
     streak,
@@ -138,8 +140,8 @@ export function Cockpit() {
                 {mode === "chalisa" && (
                   <ChalisaPanel
                     completedChunks={todayLog.chalisaChunksRead}
-                    currentChunkIndex={chunkIndex}
-                    onChunkIndexChange={setChunkIndex}
+                    currentVerseIndex={verseIndex}
+                    onVerseIndexChange={setVerseIndex}
                     onMarkChunk={markChalisaChunk}
                   />
                 )}
@@ -168,15 +170,15 @@ export function Cockpit() {
                     <>
                       <button
                         className="btn"
-                        disabled={chunkIndex === 0}
-                        onClick={() => setChunkIndex(Math.max(0, chunkIndex - 1))}
+                        disabled={verseIndex === 0}
+                        onClick={() => setVerseIndex(Math.max(0, verseIndex - 1))}
                       >
                         ← Previous
                       </button>
                       <button
                         className="btn"
-                        disabled={chunkIndex === chalisaData.chunks.length - 1}
-                        onClick={() => setChunkIndex(Math.min(chalisaData.chunks.length - 1, chunkIndex + 1))}
+                        disabled={verseIndex === TOTAL_CHALISA_VERSES - 1}
+                        onClick={() => setVerseIndex(Math.min(TOTAL_CHALISA_VERSES - 1, verseIndex + 1))}
                       >
                         Next →
                       </button>
