@@ -1,0 +1,10 @@
+{
+  "id": "gayatri_mantra",
+  "name": "Gayatri Mantra",
+  "tradition": "Vedic",
+  "source_note": "Traditional Gayatri Mantra; text reviewed against trusted printed references including Gita Press editions.",
+  "devanagari": "ॐ भूर् भुवः स्वः\nतत् सवितुर् वरेण्यं\nभर्गो देवस्य धीमहि\nधियो यो नः प्रचोदयात्",
+  "transliteration": "Om Bhūr Bhuvaḥ Svaḥ\nTat Savitur Vareṇyaṃ\nBhargo Devasya Dhīmahi\nDhiyo Yo Naḥ Prachodayāt",
+  "meaning": "We meditate on the supreme light of the Divine Sun, whose radiance pervades the earth, the atmosphere, and the heavens. May that light guide our intellect on the right path.",
+  "counts": [11, 21, 54, 108]
+}

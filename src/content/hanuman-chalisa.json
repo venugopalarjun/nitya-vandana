@@ -1,0 +1,296 @@
+{
+  "id": "hanuman_chalisa",
+  "name": "Hanuman Chalisa",
+  "tradition": "Bhakti",
+  "language_note": "Devanagari / Awadhi-Hindi",
+  "source_note": "Text cross-checked against Gita Press editions. Transliteration and English meaning are original.",
+  "chunks": [
+    {
+      "id": "opening_doha",
+      "title": "Opening Doha",
+      "verses": [
+        {
+          "devanagari": "श्रीगुरु चरन सरोज रज निज मनु मुकुरु सुधारि ।\nबरनउँ रघुबर बिमल जसु जो दायकु फल चारि ॥",
+          "transliteration": "Śrī Guru Carana Saroja Raja, Nija Manu Mukuru Sudhāri |\nBaranauṃ Raghubara Bimala Jasu, Jo Dāyaku Phala Chāri ||",
+          "meaning": "After purifying the mirror of my mind with the dust from the lotus feet of my Guru, I describe the untainted glory of Lord Rama, who bestows the four fruits of life."
+        },
+        {
+          "devanagari": "बुद्धिहीन तनु जानिके सुमिरौं पवनकुमार ।\nबल बुद्धि बिद्या देहु मोहिं हरहु कलेस बिकार ॥",
+          "transliteration": "Buddhihīna Tanu Jānike, Sumirauṃ Pavanakumāra |\nBala Buddhi Bidyā Dehu Mohiṃ, Harahu Kalesa Bikāra ||",
+          "meaning": "Knowing myself to be ignorant, I invoke Hanuman, son of the Wind God. Grant me strength, wisdom, and knowledge, and remove all afflictions and impurities."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_01_04",
+      "title": "Chaupai 1–4",
+      "verses": [
+        {
+          "devanagari": "जय हनुमान ज्ञान गुन सागर ।\nजय कपीस तिहुँ लोक उजागर ॥",
+          "transliteration": "Jaya Hanumāna Jñāna Guna Sāgara |\nJaya Kapīsa Tihuṃ Loka Ujāgara ||",
+          "meaning": "Glory to Hanuman, ocean of knowledge and virtues. Glory to the king of monkeys, whose fame illumines the three worlds."
+        },
+        {
+          "devanagari": "राम दूत अतुलित बल धामा ।\nअंजनि पुत्र पवनसुत नामा ॥",
+          "transliteration": "Rāma Dūta Atulita Bala Dhāmā |\nAñjani Putra Pavanasuta Nāmā ||",
+          "meaning": "You are the messenger of Lord Rama, the abode of incomparable strength, the son of Anjani, known by the name Pavanasuta."
+        },
+        {
+          "devanagari": "महाबीर बिक्रम बजरंगी ।\nकुमति निवार सुमति के संगी ॥",
+          "transliteration": "Mahābīra Bikrama Bajaraṅgī |\nKumati Nivāra Sumati Ke Saṅgī ||",
+          "meaning": "You are the greatest warrior with a body as strong as a thunderbolt. You destroy evil thoughts and are the companion of the wise."
+        },
+        {
+          "devanagari": "कंचन बरन बिराज सुबेसा ।\nकानन कुंडल कुंचित केसा ॥",
+          "transliteration": "Kañcana Barana Birāja Subesā |\nKānana Kuṇḍala Kuñcita Kesā ||",
+          "meaning": "Your complexion has a golden glow and your appearance is beautiful with earrings and curly hair."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_05_08",
+      "title": "Chaupai 5–8",
+      "verses": [
+        {
+          "devanagari": "हाथ बज्र औ ध्वजा बिराजै ।\nकाँधे मूँज जनेऊ साजै ॥",
+          "transliteration": "Hātha Bajra Au Dhvajā Birājai |\nKāṃdhe Mūṃja Janeū Sājai ||",
+          "meaning": "You hold a thunderbolt and a flag in your hands. A sacred thread of munja grass adorns your shoulder."
+        },
+        {
+          "devanagari": "शंकर सुवन केसरीनंदन ।\nतेज प्रताप महा जग बंदन ॥",
+          "transliteration": "Śaṅkara Suvana Kesarīnandana |\nTeja Pratāpa Mahā Jaga Bandana ||",
+          "meaning": "You are the incarnation of Lord Shiva and son of Kesari. The whole world sings the glories of your splendor."
+        },
+        {
+          "devanagari": "विद्यावान गुनी अति चातुर ।\nराम काज करिबे को आतुर ॥",
+          "transliteration": "Vidyāvāna Gunī Ati Cātura |\nRāma Kāja Karibe Ko Ātura ||",
+          "meaning": "You possess knowledge, great virtues, a sharp intellect, and are ever eager to serve Lord Rama."
+        },
+        {
+          "devanagari": "प्रभु चरित्र सुनिबे को रसिया ।\nराम लखन सीता मन बसिया ॥",
+          "transliteration": "Prabhu Charitra Sunibe Ko Rasiyā |\nRāma Lakhana Sītā Mana Basiyā ||",
+          "meaning": "You delight in listening to Lord Rama's deeds. Rama, Lakshmana, and Sita dwell in your heart."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_09_12",
+      "title": "Chaupai 9–12",
+      "verses": [
+        {
+          "devanagari": "सूक्ष्म रूप धरि सियहिं दिखावा ।\nबिकट रूप धरि लंक जरावा ॥",
+          "transliteration": "Sūkṣma Rūpa Dhari Siyahiṃ Dikhāvā |\nBikaṭa Rūpa Dhari Laṅka Jarāvā ||",
+          "meaning": "You assumed a minute form to appear before Sita, and a fierce form to burn Lanka."
+        },
+        {
+          "devanagari": "भीम रूप धरि असुर संहारे ।\nरामचंद्र के काज सँवारे ॥",
+          "transliteration": "Bhīma Rūpa Dhari Asura Saṃhāre |\nRāmacandra Ke Kāja Saṃvāre ||",
+          "meaning": "You took a gigantic form and slew many demons, accomplishing the mission of Lord Rama."
+        },
+        {
+          "devanagari": "लाय सजीवन लखन जियाये ।\nश्रीरघुबीर हरषि उर लाये ॥",
+          "transliteration": "Lāya Sajīvana Lakhana Jiyāye |\nŚrī Raghubīra Haraṣi Ura Lāye ||",
+          "meaning": "You brought the Sanjivani herb and revived Lakshmana, bringing great joy to Lord Rama's heart."
+        },
+        {
+          "devanagari": "रघुपति कीन्हीं बहुत बड़ाई ।\nतुम मम प्रिय भरतहि सम भाई ॥",
+          "transliteration": "Raghupati Kīnhīṃ Bahuta Baḍāī |\nTuma Mama Priya Bharatahi Sama Bhāī ||",
+          "meaning": "Lord Rama praised you greatly and said you are as dear to him as his brother Bharata."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_13_16",
+      "title": "Chaupai 13–16",
+      "verses": [
+        {
+          "devanagari": "सहस बदन तुम्हरो जस गावैं ।\nअस कहि श्रीपति कंठ लगावैं ॥",
+          "transliteration": "Sahasa Badana Tumharo Jasa Gāvaiṃ |\nAsa Kahi Śrīpati Kaṇṭha Lagāvaiṃ ||",
+          "meaning": "The thousand-headed Shesha sings your glories. Saying this, Lord Rama embraced you."
+        },
+        {
+          "devanagari": "सनकादिक ब्रह्मादि मुनीसा ।\nनारद सारद सहित अहीसा ॥",
+          "transliteration": "Sanakādika Brahmādi Munīsā |\nNārada Sārada Sahita Ahīsā ||",
+          "meaning": "Great sages like Sanaka, gods like Brahma, Narada, Sarasvati, and the serpent king sing your glories."
+        },
+        {
+          "devanagari": "जम कुबेर दिगपाल जहाँ ते ।\nकबि कोबिद कहि सके कहाँ ते ॥",
+          "transliteration": "Jama Kubera Digapāla Jahāṃ Te |\nKabi Kobida Kahi Sake Kahāṃ Te ||",
+          "meaning": "Yama, Kubera, the guardians of directions, poets, and scholars cannot fully describe your glory."
+        },
+        {
+          "devanagari": "तुम उपकार सुग्रीवहिं कीन्हा ।\nराम मिलाय राज पद दीन्हा ॥",
+          "transliteration": "Tuma Upakāra Sugrīvahiṃ Kīnhā |\nRāma Milāya Rāja Pada Dīnhā ||",
+          "meaning": "You helped Sugriva by introducing him to Lord Rama, who restored his kingdom."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_17_20",
+      "title": "Chaupai 17–20",
+      "verses": [
+        {
+          "devanagari": "तुम्हरो मंत्र बिभीषन माना ।\nलंकेश्वर भए सब जग जाना ॥",
+          "transliteration": "Tumharo Mantra Bibhīṣaṇa Mānā |\nLaṅkeśvara Bhae Saba Jaga Jānā ||",
+          "meaning": "Vibhishana heeded your advice and became the renowned king of Lanka."
+        },
+        {
+          "devanagari": "जुग सहस्र जोजन पर भानू ।\nलील्यो ताहि मधुर फल जानू ॥",
+          "transliteration": "Juga Sahasra Jojana Para Bhānū |\nLīlyo Tāhi Madhura Phala Jānū ||",
+          "meaning": "The sun, thousands of miles away, was swallowed by you as a child, thinking it a sweet fruit."
+        },
+        {
+          "devanagari": "प्रभु मुद्रिका मेलि मुख माहीं ।\nजलधि लाँघि गये अचरज नाहीं ॥",
+          "transliteration": "Prabhu Mudrikā Meli Mukha Māhīṃ |\nJaladhi Lāṃghi Gaye Acharaja Nāhīṃ ||",
+          "meaning": "With Lord Rama's ring in your mouth, you crossed the ocean — no surprise for one like you."
+        },
+        {
+          "devanagari": "दुर्गम काज जगत के जेते ।\nसुगम अनुग्रह तुम्हरे तेते ॥",
+          "transliteration": "Durgama Kāja Jagata Ke Jete |\nSugama Anugraha Tumhare Tete ||",
+          "meaning": "All difficult tasks of the world become easy by your grace."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_21_24",
+      "title": "Chaupai 21–24",
+      "verses": [
+        {
+          "devanagari": "राम दुआरे तुम रखवारे ।\nहोत न आज्ञा बिनु पैसारे ॥",
+          "transliteration": "Rāma Duāre Tuma Rakhavāre |\nHota Na Ājñā Binu Paisāre ||",
+          "meaning": "You guard the gateway to Rama's abode — none may enter without your permission."
+        },
+        {
+          "devanagari": "सब सुख लहै तुम्हारी सरना ।\nतुम रक्षक काहू को डर ना ॥",
+          "transliteration": "Saba Sukha Lahai Tumhārī Saranā |\nTuma Rakṣaka Kāhū Ko Ḍara Nā ||",
+          "meaning": "All joys are found in your refuge. With you as protector, there is nothing to fear."
+        },
+        {
+          "devanagari": "आपन तेज सम्हारो आपै ।\nतीनों लोक हाँक तें काँपै ॥",
+          "transliteration": "Āpana Teja Samhāro Āpai |\nTīnoṃ Loka Hāṃka Teṃ Kāṃpai ||",
+          "meaning": "You alone can control your own blazing splendor. The three worlds tremble at your roar."
+        },
+        {
+          "devanagari": "भूत पिसाच निकट नहिं आवै ।\nमहाबीर जब नाम सुनावै ॥",
+          "transliteration": "Bhūta Pisāca Nikaṭa Nahiṃ Āvai |\nMahābīra Jaba Nāma Sunāvai ||",
+          "meaning": "Ghosts and demons dare not come near when the name of Mahavira is chanted."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_25_28",
+      "title": "Chaupai 25–28",
+      "verses": [
+        {
+          "devanagari": "नासै रोग हरै सब पीरा ।\nजपत निरंतर हनुमत बीरा ॥",
+          "transliteration": "Nāsai Roga Harai Saba Pīrā |\nJapata Nirantara Hanumata Bīrā ||",
+          "meaning": "All ailments and pain are destroyed by constantly chanting the name of the brave Hanuman."
+        },
+        {
+          "devanagari": "संकट तें हनुमान छुड़ावै ।\nमन क्रम बचन ध्यान जो लावै ॥",
+          "transliteration": "Saṅkaṭa Teṃ Hanumāna Chuḍāvai |\nMana Krama Bachana Dhyāna Jo Lāvai ||",
+          "meaning": "Hanuman frees from all troubles those who meditate on him in thought, deed, and speech."
+        },
+        {
+          "devanagari": "सब पर राम तपस्वी राजा ।\nतिन के काज सकल तुम साजा ॥",
+          "transliteration": "Saba Para Rāma Tapasvī Rājā |\nTina Ke Kāja Sakala Tuma Sājā ||",
+          "meaning": "Lord Rama is the supreme ascetic king, and you carry out all his missions."
+        },
+        {
+          "devanagari": "और मनोरथ जो कोई लावै ।\nसोई अमित जीवन फल पावै ॥",
+          "transliteration": "Aura Manoratha Jo Koī Lāvai |\nSoī Amita Jīvana Phala Pāvai ||",
+          "meaning": "Whoever brings a desire to you receives the limitless fruit of life."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_29_32",
+      "title": "Chaupai 29–32",
+      "verses": [
+        {
+          "devanagari": "चारों जुग परताप तुम्हारा ।\nहै परसिद्ध जगत उजियारा ॥",
+          "transliteration": "Cāroṃ Juga Paratāpa Tumhārā |\nHai Parasiddha Jagata Ujiyārā ||",
+          "meaning": "Your glory is renowned in the four ages, and its radiance shines across the world."
+        },
+        {
+          "devanagari": "साधु संत के तुम रखवारे ।\nअसुर निकंदन राम दुलारे ॥",
+          "transliteration": "Sādhu Santa Ke Tuma Rakhavāre |\nAsura Nikandana Rāma Dulāre ||",
+          "meaning": "You are the protector of the righteous, destroyer of demons, and beloved of Lord Rama."
+        },
+        {
+          "devanagari": "अष्ट सिद्धि नौ निधि के दाता ।\nअस बर दीन जानकी माता ॥",
+          "transliteration": "Aṣṭa Siddhi Nau Nidhi Ke Dātā |\nAsa Bara Dīna Jānakī Mātā ||",
+          "meaning": "Mother Sita granted you the boon of bestowing eight siddhis and nine forms of wealth."
+        },
+        {
+          "devanagari": "राम रसायन तुम्हरे पासा ।\nसदा रहो रघुपति के दासा ॥",
+          "transliteration": "Rāma Rasāyana Tumhare Pāsā |\nSadā Raho Raghupati Ke Dāsā ||",
+          "meaning": "You possess the elixir of devotion to Lord Rama and remain ever his devoted servant."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_33_36",
+      "title": "Chaupai 33–36",
+      "verses": [
+        {
+          "devanagari": "तुम्हरे भजन राम को पावै ।\nजनम जनम के दुख बिसरावै ॥",
+          "transliteration": "Tumhare Bhajana Rāma Ko Pāvai |\nJanama Janama Ke Dukha Bisarāvai ||",
+          "meaning": "Through your worship one attains Lord Rama and forgets the sorrows of countless births."
+        },
+        {
+          "devanagari": "अंत काल रघुबर पुर जाई ।\nजहाँ जन्म हरिभक्त कहाई ॥",
+          "transliteration": "Anta Kāla Raghubara Pura Jāī |\nJahāṃ Janma Haribhakta Kahāī ||",
+          "meaning": "At the end of life one goes to Rama's abode, and wherever born, is known as a devotee."
+        },
+        {
+          "devanagari": "और देवता चित्त न धरई ।\nहनुमत सेई सर्ब सुख करई ॥",
+          "transliteration": "Aura Devatā Citta Na Dharaī |\nHanumata Seī Sarba Sukha Karaī ||",
+          "meaning": "One who worships Hanuman with single-pointed devotion enjoys all bliss."
+        },
+        {
+          "devanagari": "संकट कटै मिटै सब पीरा ।\nजो सुमिरै हनुमत बलबीरा ॥",
+          "transliteration": "Saṅkaṭa Kaṭai Miṭai Saba Pīrā |\nJo Sumirai Hanumata Balabīrā ||",
+          "meaning": "All difficulties and pain are destroyed for one who remembers the mighty Hanuman."
+        }
+      ]
+    },
+    {
+      "id": "chaupai_37_40",
+      "title": "Chaupai 37–40",
+      "verses": [
+        {
+          "devanagari": "जय जय जय हनुमान गोसाईं ।\nकृपा करहु गुरुदेव की नाईं ॥",
+          "transliteration": "Jaya Jaya Jaya Hanumāna Gosāīṃ |\nKṛpā Karahu Gurudeva Kī Nāīṃ ||",
+          "meaning": "Glory, glory, all glory to Lord Hanuman. Please shower your grace as a guru would."
+        },
+        {
+          "devanagari": "जो सत बार पाठ कर कोई ।\nछूटहि बंदि महा सुख होई ॥",
+          "transliteration": "Jo Sata Bāra Pāṭha Kara Koī |\nChūṭahi Bandi Mahā Sukha Hoī ||",
+          "meaning": "One who recites this a hundred times is freed from bondage and enjoys supreme bliss."
+        },
+        {
+          "devanagari": "जो यह पढ़ै हनुमान चलीसा ।\nहोय सिद्धि साखी गौरीसा ॥",
+          "transliteration": "Jo Yaha Paḍhai Hanumāna Chalīsā |\nHoya Siddhi Sākhī Gaurīsā ||",
+          "meaning": "Lord Shiva bears witness that one who recites this Hanuman Chalisa attains perfection."
+        },
+        {
+          "devanagari": "तुलसीदास सदा हरि चेरा ।\nकीजै नाथ हृदय महँ डेरा ॥",
+          "transliteration": "Tulasīdāsa Sadā Hari Cherā |\nKījai Nātha Hṛdaya Mahaṃ Ḍerā ||",
+          "meaning": "Tulasidas, ever a servant of the Lord, prays: O Lord, please take up residence in my heart."
+        }
+      ]
+    },
+    {
+      "id": "closing_doha",
+      "title": "Closing Doha",
+      "verses": [
+        {
+          "devanagari": "पवनतनय संकट हरन मंगल मूरति रूप ।\nराम लखन सीता सहित हृदय बसहु सुर भूप ॥",
+          "transliteration": "Pavanatanaya Saṅkaṭa Harana, Maṅgala Mūrati Rūpa |\nRāma Lakhana Sītā Sahita, Hṛdaya Basahu Sura Bhūpa ||",
+          "meaning": "O Hanuman, destroyer of all miseries and embodiment of auspiciousness. O king of the gods, please dwell in my heart along with Rama, Lakshmana, and Sita."
+        }
+      ]
+    }
+  ]
+}
