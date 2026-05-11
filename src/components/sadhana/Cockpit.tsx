@@ -6,7 +6,7 @@ import { useMeditationTimer } from "@/hooks/useMeditationTimer";
 import { GayatriPanel } from "./GayatriPanel";
 import { ChalisaPanel } from "./ChalisaPanel";
 import { MeditationTimerPanel, MeditationTimerCard } from "./MeditationTimer";
-import { RudrakshaCounter } from "./RudrakshaCounter";
+import { RudrakshaCounter, useRudrakshaCounter } from "./RudrakshaCounter";
 import { DailyLog } from "./DailyLog";
 import chalisaData from "@/content/hanuman-chalisa.json";
 
@@ -44,6 +44,7 @@ export function Cockpit() {
   } = usePracticeLog();
 
   const meditation = useMeditationTimer(addMeditationSeconds);
+  const rudraksha = useRudrakshaCounter(japaTarget, addGayatriCount);
 
   if (!hydrated) {
     return (
@@ -141,7 +142,7 @@ export function Cockpit() {
                 <div className="flex flex-wrap gap-[9px]">
                   {mode === "gayatri" && (
                     <>
-                      <button className="btn btn-primary">◉ Count One</button>
+                      <button className="btn btn-primary" onClick={rudraksha.tap}>◉ Count One</button>
                       {[11, 21, 54, 108].map((c) => (
                         <button
                           key={c}
@@ -185,8 +186,11 @@ export function Cockpit() {
           <aside className="grid gap-[10px] content-start">
             <RudrakshaCounter
               target={japaTarget}
-              onTargetChange={setJapaTarget}
-              onComplete={addGayatriCount}
+              onTargetChange={(t) => { setJapaTarget(t); rudraksha.clampTo(t); }}
+              count={rudraksha.count}
+              onTap={rudraksha.tap}
+              onUndo={rudraksha.undo}
+              onReset={rudraksha.reset}
             />
 
             <MeditationTimerCard timer={meditation} />
