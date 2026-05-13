@@ -118,7 +118,7 @@ export function Cockpit() {
           {/* Left column */}
           <section>
             {/* Mode row */}
-            <div className="flex flex-wrap gap-[9px] mb-[10px]">
+            <div className="flex flex-wrap gap-[9px] mb-[10px] sticky top-0 z-30 bg-[var(--background)] py-[6px]">
               {(["harekrishna", "gayatri", "chalisa", "meditation", "jyotish"] as Mode[]).map((m) => (
                 <button
                   key={m}

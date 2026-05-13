@@ -121,7 +121,9 @@ export async function POST(request: Request) {
     const jd = sw.swe_julday(utcYear, utcMonth, utcDay, utcHour, sw.SE_GREG_CAL);
     const flags = sw.SEFLG_SWIEPH | sw.SEFLG_SIDEREAL;
 
-    const housesResult = sw.swe_houses(jd, latitude, longitude, "W");
+    // swe_houses_ex with SEFLG_SIDEREAL applies the ayanamsa to the ascendant.
+    // Plain swe_houses() returns tropical cusps even after swe_set_sid_mode().
+    const housesResult = sw.swe_houses_ex(jd, sw.SEFLG_SIDEREAL, latitude, longitude, "W");
     const ascendantDeg = housesResult.ascmc[0];
     const lagnaSignIdx = getSignIndex(ascendantDeg);
 
