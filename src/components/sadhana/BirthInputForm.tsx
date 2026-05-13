@@ -176,7 +176,7 @@ export function BirthInputForm({
           required
         />
         {showDropdown && filtered.length > 0 && (
-          <ul className="absolute top-full left-0 right-0 z-50 mt-1 max-h-[200px] overflow-y-auto rounded-lg border border-[var(--border)] bg-[var(--card-bg)] shadow-lg">
+          <ul className="absolute top-full left-0 right-0 z-50 mt-1 max-h-[200px] overflow-y-auto rounded-lg border border-[var(--border)] bg-[var(--card)] shadow-lg">
             {filtered.map((city, i) => (
               <li key={`${city.name}-${city.state}-${i}`}>
                 <button

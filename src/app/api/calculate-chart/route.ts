@@ -1,6 +1,36 @@
-import sweph from "sweph";
+import { readFileSync } from "fs";
+import { join, dirname } from "path";
 
-const c = sweph.constants;
+/* ──────────────────────────────────────────────
+ *  Lazy-singleton: load WASM once, reuse across
+ *  invocations in the same serverless instance.
+ * ────────────────────────────────────────────── */
+
+type SwissEPH = InstanceType<typeof import("sweph-wasm").default>;
+let _sw: SwissEPH | null = null;
+
+async function getSw(): Promise<SwissEPH> {
+  if (_sw) return _sw;
+
+  const { default: SwissEPH } = await import("sweph-wasm");
+
+  // Use eval("require") to prevent Turbopack from statically analysing
+  // the deep subpath into the sweph-wasm WASM files.
+  // eslint-disable-next-line no-eval
+  const dynamicRequire = eval("require") as NodeRequire;
+  const resolvedPath = dynamicRequire.resolve("sweph-wasm"); // → absolute path to dist/index.cjs
+  const wasmDir = join(dirname(resolvedPath), "wasm");
+  const wasmBinary = readFileSync(join(wasmDir, "swisseph.wasm"));
+  const { default: wasmFactory } = dynamicRequire(join(wasmDir, "swisseph.cjs"));
+  const wasmModule = await wasmFactory({ wasmBinary });
+
+  _sw = new SwissEPH(wasmModule);
+  return _sw;
+}
+
+/* ──────────────────────────────────────────────
+ *  Helpers
+ * ────────────────────────────────────────────── */
 
 const SIGNS = [
   "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
@@ -41,11 +71,16 @@ function getHouse(planetDeg: number, lagnaSignIdx: number): number {
   return ((planetSignIdx - lagnaSignIdx + 12) % 12) + 1;
 }
 
+/* ──────────────────────────────────────────────
+ *  POST handler
+ * ────────────────────────────────────────────── */
+
 export async function POST(request: Request) {
   try {
     const body: BirthInput = await request.json();
-
     const { birth_date, birth_time, latitude, longitude, timezone_offset } = body;
+
+    const sw = await getSw();
 
     // Parse birth date and time
     const [year, month, day] = birth_date.split("-").map(Number);
@@ -63,7 +98,6 @@ export async function POST(request: Request) {
 
     if (utcHour < 0) {
       utcHour += 24;
-      // Go back one day
       const d = new Date(year, month - 1, day - 1);
       utcYear = d.getFullYear();
       utcMonth = d.getMonth() + 1;
@@ -77,28 +111,28 @@ export async function POST(request: Request) {
     }
 
     // Set sidereal mode (Lahiri ayanamsa)
-    sweph.set_sid_mode(c.SE_SIDM_LAHIRI, 0, 0);
+    sw.swe_set_sid_mode(sw.SE_SIDM_LAHIRI, 0, 0);
 
     // Calculate Julian day
-    const jd = sweph.julday(utcYear, utcMonth, utcDay, utcHour, c.SE_GREG_CAL);
+    const jd = sw.swe_julday(utcYear, utcMonth, utcDay, utcHour, sw.SE_GREG_CAL);
 
-    const flags = c.SEFLG_SWIEPH | c.SEFLG_SIDEREAL;
+    const flags = sw.SEFLG_SWIEPH | sw.SEFLG_SIDEREAL;
 
     // Calculate ascendant and houses (W = Whole Sign)
-    const housesResult = sweph.houses(jd, latitude, longitude, "W");
-    const ascendantDeg = housesResult.data.points[0];
+    const housesResult = sw.swe_houses(jd, latitude, longitude, "W");
+    const ascendantDeg = housesResult.ascmc[0]; // ascmc[0] = Ascendant
     const lagnaSignIdx = getSignIndex(ascendantDeg);
 
     // Calculate planet positions
     const planetBodies = [
-      { id: c.SE_SUN, key: "sun" },
-      { id: c.SE_MOON, key: "moon" },
-      { id: c.SE_MARS, key: "mars" },
-      { id: c.SE_MERCURY, key: "mercury" },
-      { id: c.SE_JUPITER, key: "jupiter" },
-      { id: c.SE_VENUS, key: "venus" },
-      { id: c.SE_SATURN, key: "saturn" },
-      { id: c.SE_MEAN_NODE, key: "rahu" },
+      { id: sw.SE_SUN, key: "sun" },
+      { id: sw.SE_MOON, key: "moon" },
+      { id: sw.SE_MARS, key: "mars" },
+      { id: sw.SE_MERCURY, key: "mercury" },
+      { id: sw.SE_JUPITER, key: "jupiter" },
+      { id: sw.SE_VENUS, key: "venus" },
+      { id: sw.SE_SATURN, key: "saturn" },
+      { id: sw.SE_MEAN_NODE, key: "rahu" },
     ];
 
     const grahas: Record<string, {
@@ -110,8 +144,8 @@ export async function POST(request: Request) {
     }> = {};
 
     for (const { id, key } of planetBodies) {
-      const result = sweph.calc_ut(jd, id, flags);
-      const deg = result.data[0];
+      const result = sw.swe_calc_ut(jd, id, flags);
+      const deg = result[0]; // [0] = longitude
       const sign = SIGNS[getSignIndex(deg)];
       const house = getHouse(deg, lagnaSignIdx);
       const degInSign = Number((((deg % 30) + 30) % 30).toFixed(2));
@@ -127,7 +161,7 @@ export async function POST(request: Request) {
     }
 
     // Ketu is 180 degrees from Rahu
-    const rahuDeg = sweph.calc_ut(jd, c.SE_MEAN_NODE, flags).data[0];
+    const rahuDeg = sw.swe_calc_ut(jd, sw.SE_MEAN_NODE, flags)[0];
     const ketuDeg = (rahuDeg + 180) % 360;
     const ketuNak = getNakshatra(ketuDeg);
     grahas.ketu = {
@@ -139,7 +173,7 @@ export async function POST(request: Request) {
     };
 
     // Moon nakshatra for chart summary
-    const moonDeg = sweph.calc_ut(jd, c.SE_MOON, flags).data[0];
+    const moonDeg = sw.swe_calc_ut(jd, sw.SE_MOON, flags)[0];
     const moonNak = getNakshatra(moonDeg);
 
     const chartData = {
