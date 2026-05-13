@@ -9,11 +9,12 @@ import { ChalisaPanel } from "./ChalisaPanel";
 import { MeditationTimerPanel, MeditationTimerCard } from "./MeditationTimer";
 import { RudrakshaCounter, useRudrakshaCounter } from "./RudrakshaCounter";
 import { DailyLog } from "./DailyLog";
+import { JyotishPanel } from "./JyotishPanel";
 import chalisaData from "@/content/hanuman-chalisa.json";
 
 const TOTAL_CHALISA_VERSES = chalisaData.chunks.reduce((sum, c) => sum + c.verses.length, 0);
 
-type Mode = "harekrishna" | "gayatri" | "chalisa" | "meditation";
+type Mode = "harekrishna" | "gayatri" | "chalisa" | "meditation" | "jyotish";
 
 const MODE_META: Record<Mode, { eyebrow: string; title: string; copy: string }> = {
   harekrishna: {
@@ -35,6 +36,11 @@ const MODE_META: Record<Mode, { eyebrow: string; title: string; copy: string }> 
     eyebrow: "Meditation",
     title: "Meditation",
     copy: "A simple start-stop timer. Sit quietly and let the practice settle.",
+  },
+  jyotish: {
+    eyebrow: "Vedic Astrology",
+    title: "Jyotish",
+    copy: "Your personal graha cards based on your birth chart. Planet-in-house workflows that end in practice.",
   },
 };
 
@@ -113,13 +119,13 @@ export function Cockpit() {
           <section>
             {/* Mode row */}
             <div className="flex flex-wrap gap-[9px] mb-[10px]">
-              {(["harekrishna", "gayatri", "chalisa", "meditation"] as Mode[]).map((m) => (
+              {(["harekrishna", "gayatri", "chalisa", "meditation", "jyotish"] as Mode[]).map((m) => (
                 <button
                   key={m}
                   onClick={() => setMode(m)}
                   className={`mode-btn ${mode === m ? "mode-btn-active" : ""}`}
                 >
-                  {m === "harekrishna" ? "Hare Krishna" : m === "gayatri" ? "Gayatri" : m === "chalisa" ? "Hanuman Chalisa" : "Meditation"}
+                  {m === "harekrishna" ? "Hare Krishna" : m === "gayatri" ? "Gayatri" : m === "chalisa" ? "Hanuman Chalisa" : m === "meditation" ? "Meditation" : "Jyotish"}
                 </button>
               ))}
             </div>
@@ -148,8 +154,10 @@ export function Cockpit() {
                 {mode === "meditation" && (
                   <MeditationTimerPanel timer={meditation} />
                 )}
+                {mode === "jyotish" && <JyotishPanel />}
               </div>
 
+              {mode !== "jyotish" && (
               <div className="panel-footer max-[980px]:flex-col max-[980px]:items-start">
                 <div className="flex flex-wrap gap-[9px]">
                   {(mode === "harekrishna" || mode === "gayatri") && (
@@ -191,6 +199,7 @@ export function Cockpit() {
                   )}
                 </div>
               </div>
+              )}
             </div>
           </section>
 

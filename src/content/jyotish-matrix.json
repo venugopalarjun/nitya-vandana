@@ -1,0 +1,675 @@
+{
+  "houses": {
+    "1": {
+      "name": "Self / Body / Identity",
+      "themes": ["identity", "body", "appearance", "vitality", "self-direction", "first impression"]
+    },
+    "2": {
+      "name": "Speech / Money / Values",
+      "themes": ["speech", "food", "family values", "savings", "resources", "voice", "security"]
+    },
+    "3": {
+      "name": "Effort / Skills / Courage",
+      "themes": ["communication", "siblings", "courage", "skills", "media", "writing", "self-effort"]
+    },
+    "4": {
+      "name": "Home / Mother / Inner Peace",
+      "themes": ["home", "mother", "emotional roots", "property", "vehicles", "comfort", "inner stability"]
+    },
+    "5": {
+      "name": "Intelligence / Creativity / Mantra",
+      "themes": ["learning", "creativity", "children", "romance", "mantra", "memory", "speculation"]
+    },
+    "6": {
+      "name": "Struggle / Service / Discipline",
+      "themes": ["enemies", "disease themes", "debt", "routine", "competition", "service", "conflict"]
+    },
+    "7": {
+      "name": "Partnership / Agreements / Public Mirror",
+      "themes": ["marriage", "partners", "clients", "agreements", "public dealings", "open opposition"]
+    },
+    "8": {
+      "name": "Transformation / Secrets / Crisis",
+      "themes": ["secrets", "intimacy", "shared resources", "inheritance", "occult", "crisis", "change"]
+    },
+    "9": {
+      "name": "Dharma / Teachers / Fortune",
+      "themes": ["teachers", "father", "dharma", "religion", "higher learning", "pilgrimage", "grace"]
+    },
+    "10": {
+      "name": "Career / Karma / Authority",
+      "themes": ["career", "work", "status", "public role", "authority", "contribution", "responsibility"]
+    },
+    "11": {
+      "name": "Gains / Networks / Ambition",
+      "themes": ["gains", "friends", "networks", "communities", "audience", "ambitions", "fulfillment"]
+    },
+    "12": {
+      "name": "Loss / Sleep / Solitude / Moksha",
+      "themes": ["sleep", "foreign lands", "solitude", "retreat", "expenses", "liberation", "subconscious"]
+    }
+  },
+  "planets": {
+    "sun": {
+      "title": "Where I Must Stand in My Dharma",
+      "mode": ["identity", "authority", "vitality", "father", "leadership", "purpose"],
+      "balanced": ["clarity", "responsibility", "noble confidence", "integrity"],
+      "imbalanced": ["ego", "pride", "burnout", "domination", "need for recognition"],
+      "basePractice": ["Gayatri Mantra", "sunrise discipline", "humility", "service without ego"],
+      "houses": {
+        "1": {
+          "interpretation": "Identity, body, and self-direction become central. The user must learn to stand with confidence without becoming self-centered.",
+          "practice": ["Gayatri at sunrise", "Serve without announcing it"],
+          "reflection": "Am I leading from dharma or from ego?"
+        },
+        "2": {
+          "interpretation": "Speech, values, family, and resources become fields of authority. Words carry power and must be used cleanly.",
+          "practice": ["Gayatri before important speech", "Speak truth without harshness"],
+          "reflection": "Is my speech illuminating or dominating?"
+        },
+        "3": {
+          "interpretation": "Courage, communication, skills, siblings, and self-effort become solarized. The user must act boldly but not arrogantly.",
+          "practice": ["Sunrise discipline", "Complete one courageous task daily"],
+          "reflection": "Am I acting with courage or performing strength?"
+        },
+        "4": {
+          "interpretation": "Home, mother, emotional roots, and inner peace become tied to pride and identity. The user must bring light into the inner life.",
+          "practice": ["Gayatri at home", "Offer gratitude to caregivers"],
+          "reflection": "Can I create inner peace without needing control?"
+        },
+        "5": {
+          "interpretation": "Creativity, intelligence, children, romance, and mantra become fields of self-expression. The user must create without ego inflation.",
+          "practice": ["Gayatri before study or creative work", "Teach humbly"],
+          "reflection": "Is my intelligence serving truth or recognition?"
+        },
+        "6": {
+          "interpretation": "Struggle, service, enemies, debt, disease themes, and routine require disciplined leadership. The user must defeat obstacles without becoming harsh.",
+          "practice": ["Same-time Gayatri", "Serve workers or people under pressure"],
+          "reflection": "Am I serving, or only trying to win?"
+        },
+        "7": {
+          "interpretation": "Partnership, clients, marriage, and public dealings carry authority themes. The user must learn mutual respect.",
+          "practice": ["Silence before difficult conversations", "Honor agreements"],
+          "reflection": "Am I relating, or trying to dominate the mirror?"
+        },
+        "8": {
+          "interpretation": "Transformation, secrets, intimacy, and crisis become tied to identity. The user must face hidden truths without pride.",
+          "practice": ["Gayatri plus grounding breath", "Speak honestly about difficult things"],
+          "reflection": "Can I meet transformation without needing control?"
+        },
+        "9": {
+          "interpretation": "Dharma, teachers, father, religion, and higher wisdom are strongly activated. The user must embody wisdom, not just claim it.",
+          "practice": ["Gayatri at sunrise", "Respect teachers", "Apply one teaching daily"],
+          "reflection": "Am I living my beliefs or displaying them?"
+        },
+        "10": {
+          "interpretation": "Career, authority, public role, and karma become central. The user may be visible, responsible, or leadership-oriented.",
+          "practice": ["Gayatri before work", "Make work an offering"],
+          "reflection": "Is my work contribution or only status?"
+        },
+        "11": {
+          "interpretation": "Networks, gains, communities, and ambitions become tied to recognition. The user can lead groups but must avoid status hunger.",
+          "practice": ["Serve a community without credit", "Practice gratitude for support"],
+          "reflection": "Are my ambitions expanding dharma or ego?"
+        },
+        "12": {
+          "interpretation": "Solitude, foreign lands, sleep, retreat, and moksha become tied to identity. The user must develop inner light away from public validation.",
+          "practice": ["Gayatri in solitude", "Fixed sleep/wake discipline"],
+          "reflection": "Who am I when no one sees me?"
+        }
+      }
+    },
+    "moon": {
+      "title": "Where My Mind Seeks Safety",
+      "mode": ["mind", "emotion", "memory", "nourishment", "mother", "comfort", "receptivity"],
+      "balanced": ["emotional intelligence", "care", "adaptability", "tenderness"],
+      "imbalanced": ["moodiness", "attachment", "dependency", "instability"],
+      "basePractice": ["short japa", "breath awareness", "gratitude", "emotional steadiness"],
+      "houses": {
+        "1": {
+          "interpretation": "The mind identifies strongly with the body and self-image. Emotional states may be visible.",
+          "practice": ["Breath awareness before reacting", "Gayatri 11 times"],
+          "reflection": "Am I my mood, or am I witnessing my mood?"
+        },
+        "2": {
+          "interpretation": "The mind seeks safety through food, speech, family, and resources.",
+          "practice": ["Mindful eating", "Gentle speech", "Gratitude for resources"],
+          "reflection": "Am I feeding the body or soothing emotion through habit?"
+        },
+        "3": {
+          "interpretation": "The mind seeks safety through communication, effort, siblings, and movement.",
+          "practice": ["Write one honest line after japa", "Reduce nervous messaging"],
+          "reflection": "Am I communicating to connect or to calm anxiety?"
+        },
+        "4": {
+          "interpretation": "The mind is deeply tied to home, mother, comfort, and inner peace.",
+          "practice": ["Create a clean practice corner", "Sit silently after japa"],
+          "reflection": "Can I be peaceful before the environment is perfect?"
+        },
+        "5": {
+          "interpretation": "The mind seeks joy through creativity, romance, children, learning, and recognition.",
+          "practice": ["Gayatri before creative work", "Gratitude for joy"],
+          "reflection": "Is my creativity nourishing me or asking for validation?"
+        },
+        "6": {
+          "interpretation": "The mind becomes involved in routine, service, conflict, and problems.",
+          "practice": ["Same-time short japa", "Do one service act daily"],
+          "reflection": "Am I caring through service or worrying through control?"
+        },
+        "7": {
+          "interpretation": "The mind seeks safety through partnership and relational mirroring.",
+          "practice": ["Silence before emotional conversations", "Listen fully"],
+          "reflection": "Am I asking another person to regulate my mind?"
+        },
+        "8": {
+          "interpretation": "The mind enters depth, secrecy, transformation, and emotional intensity.",
+          "practice": ["Breath awareness", "Hanuman Chalisa during emotional storms"],
+          "reflection": "Am I feeling deeply or drowning in intensity?"
+        },
+        "9": {
+          "interpretation": "The mind seeks comfort through faith, teachers, philosophy, and meaning.",
+          "practice": ["Study one teaching and apply it", "Gayatri 11 times"],
+          "reflection": "Is my belief making me kinder and steadier?"
+        },
+        "10": {
+          "interpretation": "The mind seeks safety through work, recognition, and public contribution.",
+          "practice": ["Sit silently after work", "Do not measure worth only by output"],
+          "reflection": "Am I working from purpose or emotional insecurity?"
+        },
+        "11": {
+          "interpretation": "The mind seeks belonging through friends, networks, and gains.",
+          "practice": ["Gratitude for existing support", "Reduce comparison"],
+          "reflection": "Do I want community or validation?"
+        },
+        "12": {
+          "interpretation": "The mind seeks retreat, sleep, solitude, and subtle inner worlds.",
+          "practice": ["Fixed sleep routine", "Gayatri 11 times before quiet sitting"],
+          "reflection": "Is my solitude healing me or helping me avoid life?"
+        }
+      }
+    },
+    "mars": {
+      "title": "Where I Must Act With Courage",
+      "mode": ["effort", "struggle", "courage", "action", "conflict", "protection", "discipline"],
+      "balanced": ["bravery", "initiative", "protection", "decisive effort"],
+      "imbalanced": ["anger", "impatience", "aggression", "injury", "conflict"],
+      "basePractice": ["Hanuman Chalisa", "grounding yoga", "restraint in speech", "disciplined action"],
+      "houses": {
+        "1": {
+          "interpretation": "The body, identity, and self-direction require courage and discipline. The user may appear forceful or action-oriented.",
+          "practice": ["Grounding yoga and Hanuman Chalisa"],
+          "reflection": "Am I using strength to protect or to dominate?"
+        },
+        "2": {
+          "interpretation": "Speech, money, food, and family values become heated. Results come through disciplined speech and resource effort.",
+          "practice": ["Pause before speaking", "Eat with discipline"],
+          "reflection": "Are my words weapons or tools?"
+        },
+        "3": {
+          "interpretation": "Courage, communication, siblings, media, and skills are strongly activated. This is a strong house for Mars when disciplined.",
+          "practice": ["Complete one courageous task daily", "Hanuman Chalisa"],
+          "reflection": "Am I brave, or just restless?"
+        },
+        "4": {
+          "interpretation": "Home, mother, property, and emotional peace require effort. The distortion is anger at home or restlessness in the inner life.",
+          "practice": ["Grounding yoga at home", "Speak gently with family"],
+          "reflection": "Am I bringing protection or heat into my home?"
+        },
+        "5": {
+          "interpretation": "Creativity, romance, children, learning, and intelligence become passionate and competitive.",
+          "practice": ["Channel energy into disciplined study or creation"],
+          "reflection": "Is my passion creating or burning?"
+        },
+        "6": {
+          "interpretation": "Struggle, service, enemies, debts, and competition are strongly activated. This can defeat obstacles when disciplined.",
+          "practice": ["Hanuman Chalisa daily chunk", "Same-time routine"],
+          "reflection": "Am I solving problems or feeding conflict?"
+        },
+        "7": {
+          "interpretation": "Partnership, clients, and agreements may involve heat, conflict, passion, or strong negotiation.",
+          "practice": ["Silence before arguments", "Keep agreements clean"],
+          "reflection": "Am I fighting the person or solving the issue?"
+        },
+        "8": {
+          "interpretation": "Transformation, secrets, intimacy, and crisis carry intensity and courage.",
+          "practice": ["Grounding movement", "Avoid decisions in anger"],
+          "reflection": "Am I facing truth or creating crisis?"
+        },
+        "9": {
+          "interpretation": "Dharma, teachers, beliefs, and higher learning become forceful. The user may fight for beliefs.",
+          "practice": ["Respect teachers", "Practice humility before debating"],
+          "reflection": "Is my conviction dharmic or aggressive?"
+        },
+        "10": {
+          "interpretation": "Career and public role give results through action, leadership, competition, and effort.",
+          "practice": ["Hanuman Chalisa before work", "Ethical action"],
+          "reflection": "Is my ambition disciplined or combative?"
+        },
+        "11": {
+          "interpretation": "Gains, networks, ambitions, and communities become competitive and action-driven.",
+          "practice": ["Use strength to uplift groups", "Avoid comparison"],
+          "reflection": "Am I competing with my community or contributing to it?"
+        },
+        "12": {
+          "interpretation": "Energy goes into solitude, foreign lands, sleep, retreat, and subconscious patterns. Anger may become hidden.",
+          "practice": ["Evening breathwork", "Physical discipline"],
+          "reflection": "Where is my unexpressed anger going?"
+        }
+      }
+    },
+    "mercury": {
+      "title": "Where I Must Learn and Communicate Clearly",
+      "mode": ["intellect", "speech", "learning", "trade", "analysis", "adaptability"],
+      "balanced": ["clarity", "skill", "humor", "communication", "practical intelligence"],
+      "imbalanced": ["overthinking", "manipulation", "nervousness", "scattered attention"],
+      "basePractice": ["Gayatri Mantra", "speech discipline", "single-task focus"],
+      "houses": {
+        "1": {
+          "interpretation": "Identity and personality become intellectual, communicative, adaptable, and analytical.",
+          "practice": ["Gayatri for mental clarity", "Speak simply"],
+          "reflection": "Am I communicating truth or performing cleverness?"
+        },
+        "2": {
+          "interpretation": "Speech, money, food, values, and family are shaped by intellect and words.",
+          "practice": ["Truthful speech discipline", "Write before reacting"],
+          "reflection": "Are my words clean and useful?"
+        },
+        "3": {
+          "interpretation": "Communication, media, skills, writing, siblings, and effort are strongly activated.",
+          "practice": ["Single-task learning", "Reduce scattered media"],
+          "reflection": "Am I building skill or only consuming information?"
+        },
+        "4": {
+          "interpretation": "The mind analyzes home, emotions, mother, and inner peace.",
+          "practice": ["Journaling after japa", "Do not overthink feelings"],
+          "reflection": "Can I feel without explaining everything?"
+        },
+        "5": {
+          "interpretation": "Learning, creativity, children, romance, mantra, and intelligence become analytical and expressive.",
+          "practice": ["Gayatri before study", "Teach one idea simply"],
+          "reflection": "Is my intelligence becoming wisdom?"
+        },
+        "6": {
+          "interpretation": "Routine, service, conflict, health themes, and problem-solving become mental.",
+          "practice": ["Make a simple daily checklist", "Avoid worry loops"],
+          "reflection": "Am I solving the problem or thinking around it?"
+        },
+        "7": {
+          "interpretation": "Partnership and agreements require communication, negotiation, and clarity.",
+          "practice": ["Write agreements clearly", "Listen before replying"],
+          "reflection": "Am I negotiating honestly?"
+        },
+        "8": {
+          "interpretation": "Secrets, research, psychology, and transformation become intellectual.",
+          "practice": ["Study with grounding", "Avoid obsessive analysis"],
+          "reflection": "Am I seeking insight or feeding suspicion?"
+        },
+        "9": {
+          "interpretation": "Dharma, teachers, philosophy, and higher learning become intellectual and communicative.",
+          "practice": ["Study one teaching, then apply it"],
+          "reflection": "Is my knowledge changing my conduct?"
+        },
+        "10": {
+          "interpretation": "Career and public role involve communication, commerce, analysis, writing, or strategy.",
+          "practice": ["Gayatri before work", "Speak clearly in professional settings"],
+          "reflection": "Is my work aligned with clear thinking?"
+        },
+        "11": {
+          "interpretation": "Networks, gains, friends, and communities grow through communication and trade.",
+          "practice": ["Use networks ethically", "Avoid social over-analysis"],
+          "reflection": "Am I connecting sincerely or calculating constantly?"
+        },
+        "12": {
+          "interpretation": "The mind turns inward, private, foreign, imaginative, or restless in solitude.",
+          "practice": ["Reduce late-night thinking", "Gayatri before sleep"],
+          "reflection": "Is my mind resting or wandering without direction?"
+        }
+      }
+    },
+    "jupiter": {
+      "title": "Where I Grow Through Wisdom",
+      "mode": ["wisdom", "dharma", "teaching", "expansion", "faith", "guidance", "ethics"],
+      "balanced": ["generosity", "wise judgment", "faith", "teaching", "protection"],
+      "imbalanced": ["excess", "preaching", "laziness", "overconfidence", "moral superiority"],
+      "basePractice": ["Gayatri Mantra", "gratitude", "study plus practice", "humility before teachers"],
+      "houses": {
+        "1": {
+          "interpretation": "The self becomes shaped by wisdom, faith, teaching, and guidance.",
+          "practice": ["Gratitude and humility", "Do not preach identity"],
+          "reflection": "Am I embodying wisdom or displaying it?"
+        },
+        "2": {
+          "interpretation": "Speech, money, family, and values grow through wisdom and generosity.",
+          "practice": ["Speak blessings, not superiority", "Give wisely"],
+          "reflection": "Are my values generous and grounded?"
+        },
+        "3": {
+          "interpretation": "Effort, communication, skills, and siblings grow through teaching and courage.",
+          "practice": ["Share knowledge practically", "Complete one effort daily"],
+          "reflection": "Am I teaching what I practice?"
+        },
+        "4": {
+          "interpretation": "Home, mother, emotional roots, and inner peace are supported by wisdom.",
+          "practice": ["Gratitude at home", "Create a sacred learning corner"],
+          "reflection": "Is my home a place of wisdom or only comfort?"
+        },
+        "5": {
+          "interpretation": "Learning, children, mantra, creativity, and intelligence are strongly blessed when disciplined.",
+          "practice": ["Gayatri and study", "Teach humbly"],
+          "reflection": "Is my knowledge becoming devotion?"
+        },
+        "6": {
+          "interpretation": "Service, routine, obstacles, and conflict require wisdom and ethics.",
+          "practice": ["Serve without superiority", "Keep daily discipline"],
+          "reflection": "Am I helping, or feeling morally above others?"
+        },
+        "7": {
+          "interpretation": "Partnership, clients, and agreements grow through wisdom, fairness, and counsel.",
+          "practice": ["Bless relationships through patience", "Listen fully"],
+          "reflection": "Am I guiding or patronizing?"
+        },
+        "8": {
+          "interpretation": "Transformation, secrets, intimacy, and crisis become fields of deep wisdom.",
+          "practice": ["Study deeply but stay grounded"],
+          "reflection": "Is my depth making me humble?"
+        },
+        "9": {
+          "interpretation": "Dharma, teachers, father, and higher learning are strongly activated.",
+          "practice": ["Honor teachers", "Apply one teaching daily"],
+          "reflection": "Am I living my dharma?"
+        },
+        "10": {
+          "interpretation": "Career and public role grow through ethics, teaching, guidance, and contribution.",
+          "practice": ["Make work an offering", "Mentor without ego"],
+          "reflection": "Is my authority ethical?"
+        },
+        "11": {
+          "interpretation": "Gains, networks, and communities expand through generosity and wisdom.",
+          "practice": ["Support communities", "Give without superiority"],
+          "reflection": "Are my gains serving something larger?"
+        },
+        "12": {
+          "interpretation": "Solitude, foreign lands, sleep, retreat, and moksha grow through faith and inner wisdom.",
+          "practice": ["Quiet study, Gayatri, and charitable action"],
+          "reflection": "Is my solitude deepening compassion?"
+        }
+      }
+    },
+    "venus": {
+      "title": "Where Desire Must Become Devotion",
+      "mode": ["beauty", "relationship", "pleasure", "comfort", "art", "refinement", "attraction"],
+      "balanced": ["harmony", "devotion", "appreciation", "generosity", "refinement"],
+      "imbalanced": ["indulgence", "attachment", "vanity", "laziness", "dependency"],
+      "basePractice": ["gratitude", "moderation", "gentle conduct", "beauty as offering"],
+      "houses": {
+        "1": {
+          "interpretation": "Identity, body, and self-presentation carry beauty, charm, and attraction.",
+          "practice": ["Gratitude for the body", "Avoid vanity"],
+          "reflection": "Am I using beauty to connect or to be worshipped?"
+        },
+        "2": {
+          "interpretation": "Speech, money, food, and family values seek beauty and comfort.",
+          "practice": ["Mindful eating", "Sweet but truthful speech"],
+          "reflection": "Is comfort making me grateful or attached?"
+        },
+        "3": {
+          "interpretation": "Communication, arts, media, skills, and effort become artistic and relational.",
+          "practice": ["Create beauty with discipline", "Avoid lazy expression"],
+          "reflection": "Is my art sincere or only pleasing?"
+        },
+        "4": {
+          "interpretation": "Home, mother, property, and inner peace seek comfort, beauty, and harmony.",
+          "practice": ["Beautify the practice space", "Offer gratitude at home"],
+          "reflection": "Do I need comfort before I can be peaceful?"
+        },
+        "5": {
+          "interpretation": "Creativity, romance, children, pleasure, and learning are strongly Venusian.",
+          "practice": ["Turn romance and creativity into devotion"],
+          "reflection": "Is my desire becoming love or performance?"
+        },
+        "6": {
+          "interpretation": "Service, routine, conflict, and health themes require harmony and moderation.",
+          "practice": ["Serve kindly", "Avoid indulgence that harms routine"],
+          "reflection": "Is pleasure weakening my discipline?"
+        },
+        "7": {
+          "interpretation": "Partnership, marriage, clients, and agreements become major fields of love and desire.",
+          "practice": ["Respect partners", "Listen with softness"],
+          "reflection": "Am I loving the person or the feeling they give me?"
+        },
+        "8": {
+          "interpretation": "Intimacy, secrets, transformation, and shared resources become intense and sensual.",
+          "practice": ["Honesty in intimacy", "Grounding after emotional intensity"],
+          "reflection": "Is attraction making me more truthful or more attached?"
+        },
+        "9": {
+          "interpretation": "Dharma, teachers, belief, and higher learning are refined through devotion and beauty.",
+          "practice": ["Devotional study", "Respect teachers with discernment"],
+          "reflection": "Is my faith sincere or aesthetic?"
+        },
+        "10": {
+          "interpretation": "Career and public role involve beauty, art, relationship, luxury, diplomacy, or refinement.",
+          "practice": ["Make work beautiful and ethical", "Avoid image obsession"],
+          "reflection": "Is my public image aligned with my values?"
+        },
+        "11": {
+          "interpretation": "Networks, gains, and communities bring pleasure, friendship, and social charm.",
+          "practice": ["Gratitude for friends", "Avoid social vanity"],
+          "reflection": "Do my networks nourish my heart or my ego?"
+        },
+        "12": {
+          "interpretation": "Pleasure, solitude, foreign lands, sleep, and private life become Venusian.",
+          "practice": ["Moderate private indulgence", "Silence after japa"],
+          "reflection": "Is my private pleasure peaceful or escapist?"
+        }
+      }
+    },
+    "saturn": {
+      "title": "Where I Mature Through Discipline",
+      "mode": ["delay", "duty", "patience", "structure", "humility", "endurance", "karma"],
+      "balanced": ["maturity", "perseverance", "responsibility", "boundaries"],
+      "imbalanced": ["fear", "heaviness", "rigidity", "isolation", "pessimism"],
+      "basePractice": ["Hanuman Chalisa", "same-time daily practice", "seva", "keeping promises"],
+      "houses": {
+        "1": {
+          "interpretation": "Identity, body, and self-direction mature slowly through discipline and responsibility.",
+          "practice": ["Same-time daily practice", "Care for the body patiently"],
+          "reflection": "Am I mistaking slowness for failure?"
+        },
+        "2": {
+          "interpretation": "Speech, money, family, and food require restraint and long-term structure.",
+          "practice": ["Speech discipline", "Save steadily", "Eat simply"],
+          "reflection": "Are my words mature?"
+        },
+        "3": {
+          "interpretation": "Effort, courage, skills, and communication mature through repetition.",
+          "practice": ["Practice one skill daily", "Hanuman Chalisa"],
+          "reflection": "Can I keep going without immediate results?"
+        },
+        "4": {
+          "interpretation": "Home, mother, property, and inner peace require patience and emotional maturity.",
+          "practice": ["Serve family without resentment", "Sit silently at home"],
+          "reflection": "What does emotional maturity ask of me?"
+        },
+        "5": {
+          "interpretation": "Creativity, children, learning, romance, and mantra mature through discipline.",
+          "practice": ["Fixed study or japa time", "Avoid creative despair"],
+          "reflection": "Am I willing to practice before being talented?"
+        },
+        "6": {
+          "interpretation": "Routine, service, conflict, and obstacles require endurance. This can be strong for overcoming.",
+          "practice": ["Same-time Hanuman Chalisa", "Serve workers"],
+          "reflection": "Is my discipline humble or harsh?"
+        },
+        "7": {
+          "interpretation": "Partnerships, agreements, and clients require patience, boundaries, and maturity.",
+          "practice": ["Keep promises", "Speak clearly", "Do not avoid hard conversations"],
+          "reflection": "Am I mature enough for the commitments I want?"
+        },
+        "8": {
+          "interpretation": "Transformation, crisis, intimacy, and hidden matters require deep endurance.",
+          "practice": ["Grounding, steady routine, and truthful responsibility"],
+          "reflection": "Can I stay steady through change?"
+        },
+        "9": {
+          "interpretation": "Dharma, teachers, faith, and higher learning mature slowly.",
+          "practice": ["Respect teachers", "Study consistently"],
+          "reflection": "Is my faith patient?"
+        },
+        "10": {
+          "interpretation": "Career and public role require long-term duty, structure, and responsibility.",
+          "practice": ["Work ethically", "Complete visible duties"],
+          "reflection": "Am I building something that can last?"
+        },
+        "11": {
+          "interpretation": "Gains, networks, friends, and ambitions mature slowly through responsibility.",
+          "practice": ["Serve community consistently", "Avoid comparing timelines"],
+          "reflection": "Can I honor slow gains?"
+        },
+        "12": {
+          "interpretation": "Sleep, solitude, retreat, losses, and moksha require disciplined surrender.",
+          "practice": ["Fixed sleep routine", "Quiet Hanuman or Gayatri practice"],
+          "reflection": "Am I using solitude for maturity or avoidance?"
+        }
+      }
+    },
+    "rahu": {
+      "title": "Where I Need to Release Obsession",
+      "mode": ["craving", "amplification", "ambition", "comparison", "foreignness", "disruption"],
+      "balanced": ["innovation", "breakthrough", "courage to explore", "unconventional growth"],
+      "imbalanced": ["obsession", "anxiety", "confusion", "overreach", "endless hunger"],
+      "basePractice": ["Gayatri Mantra", "grounding", "digital restraint", "desire observation"],
+      "houses": {
+        "1": {
+          "interpretation": "Obsession with identity, body, appearance, and becoming someone.",
+          "practice": ["Gayatri 21 times", "Serve without centering yourself"],
+          "reflection": "Who am I when I am not trying to be seen?"
+        },
+        "2": {
+          "interpretation": "Obsession with money, speech, food, family security, and accumulation.",
+          "practice": ["Mindful eating", "Truthful speech", "Give quietly"],
+          "reflection": "Is my speech creating clarity or control?"
+        },
+        "3": {
+          "interpretation": "Obsession with effort, communication, media, courage, and proving capability.",
+          "practice": ["Digital silence", "Complete one task", "Hanuman Chalisa"],
+          "reflection": "Am I acting from courage or fear of falling behind?"
+        },
+        "4": {
+          "interpretation": "Obsession with home, property, comfort, mother, and emotional security.",
+          "practice": ["Clean practice corner", "Gayatri and silence"],
+          "reflection": "Can I be at home within myself?"
+        },
+        "5": {
+          "interpretation": "Obsession with creativity, romance, children, recognition, and being special.",
+          "practice": ["Gayatri before creative work", "Avoid romantic drama"],
+          "reflection": "Do I want to create, or only be admired?"
+        },
+        "6": {
+          "interpretation": "Obsession with conflict, enemies, health routines, problems, and winning.",
+          "practice": ["Hanuman Chalisa", "Avoid unnecessary arguments"],
+          "reflection": "Am I solving a real problem or feeding the need to fight?"
+        },
+        "7": {
+          "interpretation": "Obsession with relationships, validation, clients, and being chosen.",
+          "practice": ["Silence before conversations", "Clear agreements"],
+          "reflection": "Am I relating from fullness or hunger?"
+        },
+        "8": {
+          "interpretation": "Obsession with secrets, occult, crisis, intimacy, and control over uncertainty.",
+          "practice": ["Grounding yoga", "Hanuman Chalisa", "Avoid occult overconsumption"],
+          "reflection": "Am I seeking truth or intensity?"
+        },
+        "9": {
+          "interpretation": "Obsession with beliefs, gurus, ideology, and being right.",
+          "practice": ["Gayatri", "Apply one teaching before preaching"],
+          "reflection": "Am I seeking truth or specialness through belief?"
+        },
+        "10": {
+          "interpretation": "Obsession with career, status, authority, public success, and visibility.",
+          "practice": ["Gayatri before work", "Work as offering"],
+          "reflection": "Is my work contribution or proof that I matter?"
+        },
+        "11": {
+          "interpretation": "Obsession with gains, networks, audience, ambitions, and social validation.",
+          "practice": ["Gratitude for support", "Serve community quietly"],
+          "reflection": "Are my ambitions expanding my heart or only my hunger?"
+        },
+        "12": {
+          "interpretation": "Obsession with escape, solitude, fantasy, foreign lands, sleep, and private worlds.",
+          "practice": ["Fixed sleep discipline", "Gayatri and silence"],
+          "reflection": "Is my solitude truth or avoidance?"
+        }
+      }
+    },
+    "ketu": {
+      "title": "Where I Need to Re-Engage Consciously",
+      "mode": ["detachment", "past familiarity", "avoidance", "spiritualization", "simplification"],
+      "balanced": ["insight", "non-attachment", "intuition", "spiritual clarity"],
+      "imbalanced": ["avoidance", "withdrawal", "disconnection", "neglect", "fragmentation"],
+      "basePractice": ["simple japa", "grounding", "re-engagement", "service", "disciplined presence"],
+      "houses": {
+        "1": {
+          "interpretation": "Detachment from self, body, identity, and personal needs.",
+          "practice": ["Body awareness yoga", "Gayatri 11 times"],
+          "reflection": "Where am I disappearing because I do not want to define myself?"
+        },
+        "2": {
+          "interpretation": "Detachment from speech, money, food, family values, and security.",
+          "practice": ["Mindful eating", "Gentle truthful speech"],
+          "reflection": "Am I detached from security or avoiding responsibility?"
+        },
+        "3": {
+          "interpretation": "Detachment from effort, communication, siblings, skills, and courage.",
+          "practice": ["Complete one small task", "Practice one skill"],
+          "reflection": "Am I seeking higher truth because I avoid simple effort?"
+        },
+        "4": {
+          "interpretation": "Detachment from home, mother, emotional roots, and inner peace.",
+          "practice": ["Clean practice corner", "Gratitude to caregivers"],
+          "reflection": "Am I chasing public success because I do not know how to rest?"
+        },
+        "5": {
+          "interpretation": "Detachment from creativity, romance, children, mantra, and personal joy.",
+          "practice": ["Create as offering", "Gayatri 21 times"],
+          "reflection": "Where am I withholding my gifts?"
+        },
+        "6": {
+          "interpretation": "Detachment from routine, service, practical discipline, and conflict handling.",
+          "practice": ["Same-time Hanuman Chalisa", "Solve one small problem daily"],
+          "reflection": "Am I detached from conflict or avoiding discipline?"
+        },
+        "7": {
+          "interpretation": "Detachment from partnership, agreements, clients, and relational mirroring.",
+          "practice": ["Listen without withdrawing", "Keep agreements clear"],
+          "reflection": "Am I detached, or am I unavailable?"
+        },
+        "8": {
+          "interpretation": "Detachment from intimacy, shared resources, crisis, and hidden transformation.",
+          "practice": ["Grounding yoga", "Address shared responsibilities"],
+          "reflection": "Am I beyond intensity or avoiding vulnerability?"
+        },
+        "9": {
+          "interpretation": "Detachment from teachers, dharma, belief, father, and higher learning.",
+          "practice": ["Apply one teaching daily", "Respect teachers with discernment"],
+          "reflection": "Am I free from dogma, or unwilling to be guided?"
+        },
+        "10": {
+          "interpretation": "Detachment from career, status, authority, and public responsibility.",
+          "practice": ["Work as karma yoga", "Complete one visible duty daily"],
+          "reflection": "Am I detached from status, or avoiding responsibility?"
+        },
+        "11": {
+          "interpretation": "Detachment from gains, networks, friends, and large ambitions.",
+          "practice": ["Serve community quietly", "Maintain sincere friendships"],
+          "reflection": "Am I detached from the crowd, or unwilling to receive support?"
+        },
+        "12": {
+          "interpretation": "Detachment from solitude, sleep, retreat, loss, and moksha themes.",
+          "practice": ["Gayatri and meditation", "Practical seva", "Fixed sleep routine"],
+          "reflection": "Is my detachment liberating me or disconnecting me from life?"
+        }
+      }
+    }
+  }
+}
