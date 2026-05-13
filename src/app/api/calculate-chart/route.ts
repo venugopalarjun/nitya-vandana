@@ -4,26 +4,35 @@ import { join, dirname } from "path";
 /* ──────────────────────────────────────────────
  *  Lazy-singleton: load WASM once, reuse across
  *  invocations in the same serverless instance.
+ *
+ *  We use eval("require") everywhere to keep
+ *  Turbopack from statically analysing imports
+ *  into the sweph-wasm package. This avoids both
+ *  the native-binary error and the WASM-subpath
+ *  bundling issue.
  * ────────────────────────────────────────────── */
 
-type SwissEPH = InstanceType<typeof import("sweph-wasm").default>;
-let _sw: SwissEPH | null = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let _sw: any = null;
 
-async function getSw(): Promise<SwissEPH> {
+async function getSw() {
   if (_sw) return _sw;
 
-  const { default: SwissEPH } = await import("sweph-wasm");
-
-  // Use eval("require") to prevent Turbopack from statically analysing
-  // the deep subpath into the sweph-wasm WASM files.
   // eslint-disable-next-line no-eval
   const dynamicRequire = eval("require") as NodeRequire;
-  const resolvedPath = dynamicRequire.resolve("sweph-wasm"); // → absolute path to dist/index.cjs
+
+  // 1. Load the SwissEPH class from sweph-wasm
+  //    CJS require returns the class directly (not { default })
+  const SwissEPH = dynamicRequire("sweph-wasm");
+
+  // 2. Locate the WASM binary + factory next to the main CJS entry
+  const resolvedPath: string = dynamicRequire.resolve("sweph-wasm");
   const wasmDir = join(dirname(resolvedPath), "wasm");
   const wasmBinary = readFileSync(join(wasmDir, "swisseph.wasm"));
   const { default: wasmFactory } = dynamicRequire(join(wasmDir, "swisseph.cjs"));
-  const wasmModule = await wasmFactory({ wasmBinary });
 
+  // 3. Boot the WASM module and create the SwissEPH wrapper
+  const wasmModule = await wasmFactory({ wasmBinary });
   _sw = new SwissEPH(wasmModule);
   return _sw;
 }
