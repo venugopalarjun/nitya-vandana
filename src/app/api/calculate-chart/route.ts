@@ -5,11 +5,11 @@ import { join, dirname } from "path";
  *  Lazy-singleton: load WASM once, reuse across
  *  invocations in the same serverless instance.
  *
- *  We use eval("require") everywhere to keep
- *  Turbopack from statically analysing imports
- *  into the sweph-wasm package. This avoids both
- *  the native-binary error and the WASM-subpath
- *  bundling issue.
+ *  Strategy:
+ *  - import("sweph-wasm") is visible to Turbopack so
+ *    serverExternalPackages includes it in the function
+ *  - eval("require") is used only for the deep wasm
+ *    subpath that Turbopack can't resolve
  * ────────────────────────────────────────────── */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,20 +18,20 @@ let _sw: any = null;
 async function getSw() {
   if (_sw) return _sw;
 
+  // This dynamic import is visible to Turbopack — it ensures
+  // sweph-wasm gets included via serverExternalPackages.
+  const mod = await import("sweph-wasm");
+  const SwissEPH = mod.default ?? mod;
+
+  // Use eval("require") only for the deep subpath (wasm factory + binary)
+  // that Turbopack can't statically resolve.
   // eslint-disable-next-line no-eval
   const dynamicRequire = eval("require") as NodeRequire;
-
-  // 1. Load the SwissEPH class from sweph-wasm
-  //    CJS require returns the class directly (not { default })
-  const SwissEPH = dynamicRequire("sweph-wasm");
-
-  // 2. Locate the WASM binary + factory next to the main CJS entry
   const resolvedPath: string = dynamicRequire.resolve("sweph-wasm");
   const wasmDir = join(dirname(resolvedPath), "wasm");
   const wasmBinary = readFileSync(join(wasmDir, "swisseph.wasm"));
   const { default: wasmFactory } = dynamicRequire(join(wasmDir, "swisseph.cjs"));
 
-  // 3. Boot the WASM module and create the SwissEPH wrapper
   const wasmModule = await wasmFactory({ wasmBinary });
   _sw = new SwissEPH(wasmModule);
   return _sw;
@@ -68,7 +68,7 @@ function getSignIndex(deg: number): number {
 
 function getNakshatra(deg: number): { name: string; pada: number } {
   const normalized = ((deg % 360) + 360) % 360;
-  const nakshatraSpan = 360 / 27; // 13.333...
+  const nakshatraSpan = 360 / 27;
   const nakshatraIndex = Math.floor(normalized / nakshatraSpan);
   const posInNakshatra = normalized - nakshatraIndex * nakshatraSpan;
   const pada = Math.floor(posInNakshatra / (nakshatraSpan / 4)) + 1;
@@ -91,15 +91,12 @@ export async function POST(request: Request) {
 
     const sw = await getSw();
 
-    // Parse birth date and time
     const [year, month, day] = birth_date.split("-").map(Number);
     const [hour, minute] = birth_time.split(":").map(Number);
 
-    // Convert local time to UTC
     const localDecimalHour = hour + minute / 60;
     const utcDecimalHour = localDecimalHour - timezone_offset;
 
-    // Adjust date if UTC hour crosses midnight
     let utcYear = year;
     let utcMonth = month;
     let utcDay = day;
@@ -119,20 +116,15 @@ export async function POST(request: Request) {
       utcDay = d.getDate();
     }
 
-    // Set sidereal mode (Lahiri ayanamsa)
     sw.swe_set_sid_mode(sw.SE_SIDM_LAHIRI, 0, 0);
 
-    // Calculate Julian day
     const jd = sw.swe_julday(utcYear, utcMonth, utcDay, utcHour, sw.SE_GREG_CAL);
-
     const flags = sw.SEFLG_SWIEPH | sw.SEFLG_SIDEREAL;
 
-    // Calculate ascendant and houses (W = Whole Sign)
     const housesResult = sw.swe_houses(jd, latitude, longitude, "W");
-    const ascendantDeg = housesResult.ascmc[0]; // ascmc[0] = Ascendant
+    const ascendantDeg = housesResult.ascmc[0];
     const lagnaSignIdx = getSignIndex(ascendantDeg);
 
-    // Calculate planet positions
     const planetBodies = [
       { id: sw.SE_SUN, key: "sun" },
       { id: sw.SE_MOON, key: "moon" },
@@ -154,7 +146,7 @@ export async function POST(request: Request) {
 
     for (const { id, key } of planetBodies) {
       const result = sw.swe_calc_ut(jd, id, flags);
-      const deg = result[0]; // [0] = longitude
+      const deg = result[0];
       const sign = SIGNS[getSignIndex(deg)];
       const house = getHouse(deg, lagnaSignIdx);
       const degInSign = Number((((deg % 30) + 30) % 30).toFixed(2));
@@ -169,7 +161,6 @@ export async function POST(request: Request) {
       };
     }
 
-    // Ketu is 180 degrees from Rahu
     const rahuDeg = sw.swe_calc_ut(jd, sw.SE_MEAN_NODE, flags)[0];
     const ketuDeg = (rahuDeg + 180) % 360;
     const ketuNak = getNakshatra(ketuDeg);
@@ -181,18 +172,11 @@ export async function POST(request: Request) {
       pada: ketuNak.pada,
     };
 
-    // Moon nakshatra for chart summary
     const moonDeg = sw.swe_calc_ut(jd, sw.SE_MOON, flags)[0];
     const moonNak = getNakshatra(moonDeg);
 
     const chartData = {
-      birth: {
-        date: birth_date,
-        time: birth_time,
-        latitude,
-        longitude,
-        timezone_offset,
-      },
+      birth: { date: birth_date, time: birth_time, latitude, longitude, timezone_offset },
       settings: {
         system: "vedic",
         zodiac: "sidereal",
