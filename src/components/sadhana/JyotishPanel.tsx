@@ -6,8 +6,9 @@ import { BirthInputForm } from "./BirthInputForm";
 import { GrahaCardStrip } from "./GrahaCardStrip";
 import { GrahaCardDetail } from "./GrahaCardDetail";
 import { ChartSummary } from "./ChartSummary";
+import { NakshatraKarma } from "./NakshatraKarma";
 
-type JyotishView = "input" | "summary" | "cards";
+type JyotishView = "input" | "summary" | "cards" | "karma";
 
 const PLANET_ORDER = ["sun", "moon", "mars", "mercury", "jupiter", "venus", "saturn", "rahu", "ketu"] as const;
 
@@ -141,8 +142,16 @@ export function JyotishPanel() {
           birthPlace={profile.birthPlace}
           birthTimeConfidence={profile.birthTimeConfidence}
           onSelectPlanet={handleSelectPlanet}
+          onSelectKarma={() => setView("karma")}
           onRecalculate={handleBack}
           onDeleteProfile={handleDeleteProfile}
+        />
+      )}
+
+      {view === "karma" && profile?.chart && (
+        <NakshatraKarma
+          chart={profile.chart}
+          onBack={() => setView("summary")}
         />
       )}
 
