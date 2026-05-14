@@ -66,80 +66,82 @@ export function ChartSummary({
 
   return (
     <div className="grid gap-[16px]">
-      {/* Chart Diagram (South Indian) */}
-      <div className="grid grid-cols-4 gap-[2px] max-w-[320px] mx-auto">
-        {SOUTH_INDIAN_GRID.flat().map((signIdx, i) => {
-          if (signIdx === null) {
-            // Center cells — show chart label
-            if (i === 5) {
-              return (
-                <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-1">
-                  <span className="text-[10px] text-[var(--muted-foreground)]">Rashi</span>
-                </div>
-              );
+      {/* Chart + Core Facts side by side */}
+      <div className="chart-summary-row">
+        {/* Chart Diagram (South Indian) */}
+        <div className="grid grid-cols-4 gap-[2px] chart-grid-sized">
+          {SOUTH_INDIAN_GRID.flat().map((signIdx, i) => {
+            if (signIdx === null) {
+              if (i === 5) {
+                return (
+                  <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-1">
+                    <span className="text-[11px] text-[var(--muted-foreground)]">Rashi</span>
+                  </div>
+                );
+              }
+              if (i === 6) {
+                return (
+                  <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-1">
+                    <span className="text-[11px] text-[var(--muted-foreground)]">Chart</span>
+                  </div>
+                );
+              }
+              if (i === 9) {
+                return (
+                  <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-1">
+                    <span className="text-[11px] text-[var(--primary)]">{chart.core.lagna_sign}</span>
+                  </div>
+                );
+              }
+              if (i === 10) {
+                return (
+                  <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-1">
+                    <span className="text-[11px] text-[var(--primary)]">Lagna</span>
+                  </div>
+                );
+              }
+              return <div key={i} className="chart-cell-center" />;
             }
-            if (i === 6) {
-              return (
-                <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-1">
-                  <span className="text-[10px] text-[var(--muted-foreground)]">Chart</span>
-                </div>
-              );
-            }
-            if (i === 9) {
-              return (
-                <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-1">
-                  <span className="text-[10px] text-[var(--primary)]">{chart.core.lagna_sign}</span>
-                </div>
-              );
-            }
-            if (i === 10) {
-              return (
-                <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-1">
-                  <span className="text-[10px] text-[var(--primary)]">Lagna</span>
-                </div>
-              );
-            }
-            return <div key={i} className="chart-cell-center" />;
-          }
 
-          const isLagna = signIdx === lagnaIdx;
-          const planets = signPlanets[signIdx] || [];
+            const isLagna = signIdx === lagnaIdx;
+            const planets = signPlanets[signIdx] || [];
 
-          return (
-            <div
-              key={i}
-              className={`chart-cell ${isLagna ? "chart-cell-lagna" : ""}`}
-            >
-              <span className="text-[9px] text-[var(--muted-foreground)] leading-none">
-                {SIGN_ABBREV[SIGNS[signIdx]]}
-              </span>
-              {planets.length > 0 && (
-                <span className="text-[10px] font-medium text-[var(--foreground)] leading-tight text-center">
-                  {planets.join(" ")}
+            return (
+              <div
+                key={i}
+                className={`chart-cell ${isLagna ? "chart-cell-lagna" : ""}`}
+              >
+                <span className="text-[10px] text-[var(--muted-foreground)] leading-none">
+                  {SIGN_ABBREV[SIGNS[signIdx]]}
                 </span>
-              )}
-            </div>
-          );
-        })}
-      </div>
+                {planets.length > 0 && (
+                  <span className="text-[11px] font-medium text-[var(--foreground)] leading-tight text-center">
+                    {planets.join(" ")}
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
 
-      {/* Core Facts */}
-      <div className="grid grid-cols-2 gap-[8px]">
-        <div className="jyotish-fact">
-          <span className="text-[10px] text-[var(--muted-foreground)]">Lagna</span>
-          <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.lagna_sign}</span>
-        </div>
-        <div className="jyotish-fact">
-          <span className="text-[10px] text-[var(--muted-foreground)]">Moon Sign</span>
-          <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_sign}</span>
-        </div>
-        <div className="jyotish-fact">
-          <span className="text-[10px] text-[var(--muted-foreground)]">Nakshatra</span>
-          <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_nakshatra}</span>
-        </div>
-        <div className="jyotish-fact">
-          <span className="text-[10px] text-[var(--muted-foreground)]">Pada</span>
-          <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_pada}</span>
+        {/* Core Facts — stacked vertically beside chart */}
+        <div className="chart-facts-col">
+          <div className="jyotish-fact">
+            <span className="text-[10px] text-[var(--muted-foreground)]">Lagna</span>
+            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.lagna_sign}</span>
+          </div>
+          <div className="jyotish-fact">
+            <span className="text-[10px] text-[var(--muted-foreground)]">Moon Sign</span>
+            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_sign}</span>
+          </div>
+          <div className="jyotish-fact">
+            <span className="text-[10px] text-[var(--muted-foreground)]">Nakshatra</span>
+            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_nakshatra}</span>
+          </div>
+          <div className="jyotish-fact">
+            <span className="text-[10px] text-[var(--muted-foreground)]">Pada</span>
+            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_pada}</span>
+          </div>
         </div>
       </div>
 

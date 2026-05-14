@@ -923,6 +923,47 @@
   background: rgba(14, 11, 8, 0.3);
 }
 
+/* Chart summary: chart + facts side by side */
+.chart-summary-row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.chart-grid-sized {
+  flex: 0 0 auto;
+  width: min(65%, 360px);
+}
+
+.chart-facts-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 0%;
+  min-width: 120px;
+}
+
+.chart-facts-col .jyotish-fact {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .chart-summary-row {
+    flex-direction: column;
+  }
+  .chart-grid-sized {
+    width: 100%;
+  }
+  .chart-facts-col {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .chart-facts-col .jyotish-fact {
+    flex: 1 1 calc(50% - 4px);
+  }
+}
+
 /* Graha rows in summary */
 .graha-row {
   display: flex;
