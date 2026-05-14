@@ -65,38 +65,38 @@ export function ChartSummary({
   const lagnaIdx = SIGNS.indexOf(chart.core.lagna_sign);
 
   return (
-    <div className="grid gap-[16px]">
-      {/* Chart + Core Facts side by side */}
+    <div className="grid gap-[12px]">
+      {/* Chart + Core Facts side by side — compact */}
       <div className="chart-summary-row">
         {/* Chart Diagram (South Indian) */}
-        <div className="grid grid-cols-4 gap-[2px] chart-grid-sized">
+        <div className="grid grid-cols-4 gap-[1px] chart-grid-sized">
           {SOUTH_INDIAN_GRID.flat().map((signIdx, i) => {
             if (signIdx === null) {
               if (i === 5) {
                 return (
-                  <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-1">
-                    <span className="text-[11px] text-[var(--muted-foreground)]">Rashi</span>
+                  <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-0.5">
+                    <span className="text-[9px] text-[var(--muted-foreground)]">Rashi</span>
                   </div>
                 );
               }
               if (i === 6) {
                 return (
-                  <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-1">
-                    <span className="text-[11px] text-[var(--muted-foreground)]">Chart</span>
+                  <div key={i} className="chart-cell-center col-span-1 flex items-end justify-center pb-0.5">
+                    <span className="text-[9px] text-[var(--muted-foreground)]">Chart</span>
                   </div>
                 );
               }
               if (i === 9) {
                 return (
-                  <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-1">
-                    <span className="text-[11px] text-[var(--primary)]">{chart.core.lagna_sign}</span>
+                  <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-0.5">
+                    <span className="text-[9px] text-[var(--primary)]">{chart.core.lagna_sign}</span>
                   </div>
                 );
               }
               if (i === 10) {
                 return (
-                  <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-1">
-                    <span className="text-[11px] text-[var(--primary)]">Lagna</span>
+                  <div key={i} className="chart-cell-center col-span-1 flex items-start justify-center pt-0.5">
+                    <span className="text-[9px] text-[var(--primary)]">Lagna</span>
                   </div>
                 );
               }
@@ -111,11 +111,11 @@ export function ChartSummary({
                 key={i}
                 className={`chart-cell ${isLagna ? "chart-cell-lagna" : ""}`}
               >
-                <span className="text-[10px] text-[var(--muted-foreground)] leading-none">
+                <span className="text-[9px] text-[var(--muted-foreground)] leading-none">
                   {SIGN_ABBREV[SIGNS[signIdx]]}
                 </span>
                 {planets.length > 0 && (
-                  <span className="text-[11px] font-medium text-[var(--foreground)] leading-tight text-center">
+                  <span className="text-[10px] font-medium text-[var(--foreground)] leading-tight text-center">
                     {planets.join(" ")}
                   </span>
                 )}
@@ -126,37 +126,42 @@ export function ChartSummary({
 
         {/* Core Facts — stacked vertically beside chart */}
         <div className="chart-facts-col">
-          <div className="jyotish-fact">
-            <span className="text-[10px] text-[var(--muted-foreground)]">Lagna</span>
-            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.lagna_sign}</span>
+          <div className="jyotish-fact-compact">
+            <span className="text-[9px] text-[var(--muted-foreground)]">Lagna</span>
+            <span className="text-[13px] font-medium text-[var(--foreground)]">{chart.core.lagna_sign}</span>
           </div>
-          <div className="jyotish-fact">
-            <span className="text-[10px] text-[var(--muted-foreground)]">Moon Sign</span>
-            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_sign}</span>
+          <div className="jyotish-fact-compact">
+            <span className="text-[9px] text-[var(--muted-foreground)]">Moon Sign</span>
+            <span className="text-[13px] font-medium text-[var(--foreground)]">{chart.core.moon_sign}</span>
           </div>
-          <div className="jyotish-fact">
-            <span className="text-[10px] text-[var(--muted-foreground)]">Nakshatra</span>
-            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_nakshatra}</span>
+          <div className="jyotish-fact-compact">
+            <span className="text-[9px] text-[var(--muted-foreground)]">Nakshatra</span>
+            <span className="text-[13px] font-medium text-[var(--foreground)]">{chart.core.moon_nakshatra}</span>
           </div>
-          <div className="jyotish-fact">
-            <span className="text-[10px] text-[var(--muted-foreground)]">Pada</span>
-            <span className="text-sm font-medium text-[var(--foreground)]">{chart.core.moon_pada}</span>
+          <div className="jyotish-fact-compact">
+            <span className="text-[9px] text-[var(--muted-foreground)]">Pada</span>
+            <span className="text-[13px] font-medium text-[var(--foreground)]">{chart.core.moon_pada}</span>
           </div>
         </div>
       </div>
 
       {birthTimeConfidence === "approximate" && (
-        <div className="text-[11px] text-[var(--muted-foreground)] bg-[var(--border)]/20 rounded-lg px-3 py-2">
+        <div className="text-[10px] text-[var(--muted-foreground)] bg-[var(--border)]/20 rounded-lg px-2.5 py-1.5">
           Birth time is approximate. House placements may shift if time is corrected.
         </div>
       )}
 
-      {/* Planet Workflows */}
+      {/* Planet Workflows — 3-column card grid */}
       <div>
-        <h4 className="text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider mb-[10px]">
-          Planet Workflows
-        </h4>
-        <div className="grid gap-[6px]">
+        <div className="flex items-center justify-between mb-[8px]">
+          <h4 className="text-[10px] font-medium text-[var(--muted-foreground)] uppercase tracking-wider">
+            Planet Workflows
+          </h4>
+          <span className="text-[9px] text-[var(--muted-foreground)]">
+            Lahiri · Whole Sign · D1
+          </span>
+        </div>
+        <div className="graha-card-grid">
           {PLANET_ORDER.map((key) => {
             const graha = chart.grahas[key];
             if (!graha) return null;
@@ -165,17 +170,19 @@ export function ChartSummary({
               <button
                 key={key}
                 onClick={() => onSelectPlanet(key)}
-                className="graha-row"
+                className="graha-card-mini"
               >
-                <div className="flex items-center gap-[10px]">
-                  <span className="graha-badge">{PLANET_LABELS[key]}</span>
-                  <span className="text-xs text-[var(--muted-foreground)]">
-                    {graha.sign} · {graha.house}{ordinal(graha.house)} house
+                <div className="graha-card-mini-icon">
+                  {PLANET_SYMBOLS[key]}
+                </div>
+                <div className="graha-card-mini-body">
+                  <span className="text-[11px] font-semibold text-[var(--foreground)] leading-tight">
+                    {PLANET_LABELS[key]}
+                  </span>
+                  <span className="text-[9px] text-[var(--muted-foreground)] leading-tight">
+                    {graha.sign} · {graha.house}{ordinal(graha.house)}
                   </span>
                 </div>
-                <span className="text-[11px] text-[var(--primary)] text-right max-w-[180px] truncate">
-                  {planetData?.title}
-                </span>
               </button>
             );
           })}
@@ -183,18 +190,13 @@ export function ChartSummary({
       </div>
 
       {/* Settings footer */}
-      <div className="flex items-center justify-between pt-2 border-t border-[var(--border)]">
-        <span className="text-[10px] text-[var(--muted-foreground)]">
-          Lahiri · Whole Sign · Mean Node · D1
-        </span>
-        <div className="flex gap-[8px]">
-          <button onClick={onRecalculate} className="text-[10px] text-[var(--primary)] hover:underline">
-            Edit
-          </button>
-          <button onClick={onDeleteProfile} className="text-[10px] text-red-400 hover:underline">
-            Delete
-          </button>
-        </div>
+      <div className="flex items-center justify-end gap-[8px]">
+        <button onClick={onRecalculate} className="text-[10px] text-[var(--primary)] hover:underline">
+          Edit
+        </button>
+        <button onClick={onDeleteProfile} className="text-[10px] text-red-400 hover:underline">
+          Delete
+        </button>
       </div>
     </div>
   );

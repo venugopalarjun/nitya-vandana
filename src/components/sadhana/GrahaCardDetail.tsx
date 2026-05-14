@@ -58,6 +58,15 @@ export function GrahaCardDetail({
 
   return (
     <div className="grid gap-[14px]">
+      {/* Back bar */}
+      <button
+        onClick={onBack}
+        className="graha-back-btn"
+      >
+        <span className="text-[14px]">←</span>
+        <span>Back to Chart</span>
+      </button>
+
       {/* Planet strip for quick switching */}
       <GrahaCardStrip chart={chart} selectedPlanet={planetKey} onSelect={onSelectPlanet} />
 
@@ -65,9 +74,6 @@ export function GrahaCardDetail({
       <div className="graha-card">
         {/* Header */}
         <div className="mb-[14px]">
-          <button onClick={onBack} className="text-[11px] text-[var(--primary)] mb-2 hover:underline">
-            ← All planets
-          </button>
           <h3 className="text-[18px] font-semibold text-[var(--foreground)] tracking-tight">
             {PLANET_LABELS[planetKey]} in the {graha.house}{ordinal(graha.house)} House
           </h3>
