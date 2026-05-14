@@ -12,12 +12,14 @@ type NakshatraEntry = {
   ruler: string;
   deity: string;
   symbol: string;
-  pastKarma: string;
-  currentLife: string;
+  classicalAnchor: string;
+  psychologicalExpression: string;
+  shadowExpression: string;
+  karmicInterpretation: string;
   career: string[];
   health: string[];
   remedy: string[];
-  onceCleared: string;
+  higherExpression: string;
 };
 
 export function NakshatraKarma({ chart, onBack }: NakshatraKarmaProps) {
@@ -51,38 +53,48 @@ export function NakshatraKarma({ chart, onBack }: NakshatraKarmaProps) {
       <div className="graha-card">
         {/* Header */}
         <div className="mb-[14px]">
-          <div className="eyebrow mb-1">Past Life Debt</div>
+          <div className="eyebrow mb-1">Nakshatra Curriculum</div>
           <h3 className="text-[18px] font-semibold text-[var(--foreground)] tracking-tight">
             Moon in {nakshatra}
           </h3>
           <div className="flex flex-wrap gap-[8px] mt-2">
-            <span className="karma-tag">
-              {entry.ruler}
-            </span>
-            <span className="karma-tag">
-              {entry.deity}
-            </span>
-            <span className="karma-tag">
-              {entry.symbol}
-            </span>
+            <span className="karma-tag">{entry.ruler}</span>
+            <span className="karma-tag">{entry.deity}</span>
+            <span className="karma-tag">{entry.symbol}</span>
           </div>
         </div>
 
-        {/* Past Karma */}
+        {/* Classical Anchor */}
         <section className="graha-section">
-          <h4 className="graha-section-title">Karmic Debt</h4>
+          <h4 className="graha-section-title">Classical Anchor</h4>
           <p className="text-[13px] text-[var(--foreground)] leading-relaxed">
-            {entry.pastKarma}
+            {entry.classicalAnchor}
           </p>
         </section>
 
-        {/* Current Life */}
+        {/* Psychological Expression */}
         <section className="graha-section">
-          <h4 className="graha-section-title">Current Life Pattern</h4>
+          <h4 className="graha-section-title">Psychological Expression</h4>
           <p className="text-[13px] text-[var(--foreground)] leading-relaxed">
-            {entry.currentLife}
+            {entry.psychologicalExpression}
           </p>
         </section>
+
+        {/* Shadow + Karmic side by side */}
+        <div className="grid grid-cols-2 gap-[10px] max-[480px]:grid-cols-1">
+          <section className="graha-section">
+            <h4 className="graha-section-title text-[var(--accent)]">Shadow Expression</h4>
+            <p className="text-[12px] text-[var(--foreground)] leading-relaxed">
+              {entry.shadowExpression}
+            </p>
+          </section>
+          <section className="graha-section">
+            <h4 className="graha-section-title text-[var(--primary)]">Karmic Lesson</h4>
+            <p className="text-[12px] text-[var(--foreground)] leading-relaxed">
+              {entry.karmicInterpretation}
+            </p>
+          </section>
+        </div>
 
         {/* Career + Health side by side */}
         <div className="grid grid-cols-2 gap-[10px] max-[480px]:grid-cols-1">
@@ -93,7 +105,7 @@ export function NakshatraKarma({ chart, onBack }: NakshatraKarmaProps) {
             </p>
           </section>
           <section className="graha-section">
-            <h4 className="graha-section-title text-[var(--accent)]">Health Areas</h4>
+            <h4 className="graha-section-title">Health Tendency</h4>
             <p className="text-[12px] text-[var(--foreground)] leading-relaxed">
               {entry.health.join(", ")}
             </p>
@@ -102,7 +114,7 @@ export function NakshatraKarma({ chart, onBack }: NakshatraKarmaProps) {
 
         {/* Remedy */}
         <section className="graha-section">
-          <h4 className="graha-section-title text-[var(--color-tulsi)]">Remedy</h4>
+          <h4 className="graha-section-title text-[var(--color-tulsi)]">Remedial Practices</h4>
           <ul className="grid gap-[4px]">
             {entry.remedy.map((r, i) => (
               <li key={i} className="text-[13px] text-[var(--foreground)] flex items-start gap-[6px]">
@@ -113,18 +125,18 @@ export function NakshatraKarma({ chart, onBack }: NakshatraKarmaProps) {
           </ul>
         </section>
 
-        {/* Once Cleared */}
+        {/* Higher Expression */}
         <section className="graha-section graha-reflection">
-          <h4 className="graha-section-title">Once Cleared</h4>
+          <h4 className="graha-section-title">Higher Expression</h4>
           <p className="text-[14px] text-[var(--foreground)] italic leading-relaxed">
-            {entry.onceCleared}
+            {entry.higherExpression}
           </p>
         </section>
       </div>
 
       {/* Attribution */}
       <p className="text-[9px] text-[var(--muted-foreground)] text-center">
-        Moon · {nakshatra} · Pada {chart.core.moon_pada} · {chart.core.moon_sign}
+        Moon · {nakshatra} · Pada {chart.core.moon_pada} · {chart.core.moon_sign} · Classical lens: Brihat Samhita
       </p>
     </div>
   );
