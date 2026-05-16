@@ -188,25 +188,25 @@ export function ChartSummary({
               </button>
             );
           })}
-        </div>
 
-        {/* Past Life Debt card */}
-        <button
-          onClick={onSelectKarma}
-          className="karma-card-mini"
-        >
-          <div className="graha-card-mini-icon karma-icon">
-            ☾
-          </div>
-          <div className="graha-card-mini-body">
-            <span className="text-[11px] font-semibold text-[var(--foreground)] leading-tight">
-              Past Life Debt
-            </span>
-            <span className="text-[9px] text-[var(--muted-foreground)] leading-tight">
-              {chart.core.moon_nakshatra} · Pada {chart.core.moon_pada}
-            </span>
-          </div>
-        </button>
+          {/* Past Life Debt card — inside the grid */}
+          <button
+            onClick={onSelectKarma}
+            className="karma-card-mini"
+          >
+            <div className="graha-card-mini-icon karma-icon">
+              ☾
+            </div>
+            <div className="graha-card-mini-body">
+              <span className="text-[11px] font-semibold text-[var(--foreground)] leading-tight">
+                Past Life Debt
+              </span>
+              <span className="text-[9px] text-[var(--muted-foreground)] leading-tight">
+                {chart.core.moon_nakshatra} · Pada {chart.core.moon_pada}
+              </span>
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Settings footer */}

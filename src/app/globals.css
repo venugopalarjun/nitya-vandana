@@ -1155,7 +1155,6 @@
   cursor: pointer;
   transition: 180ms ease;
   text-align: left;
-  grid-column: 1 / -1;
 }
 
 .karma-card-mini:hover {
